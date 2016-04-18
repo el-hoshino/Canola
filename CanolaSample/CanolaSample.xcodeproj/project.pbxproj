@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		792FB8B51CC51EB200903A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8B41CC51EB200903A9C /* AppDelegate.swift */; };
+		792FB8B71CC51EB200903A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8B61CC51EB200903A9C /* ViewController.swift */; };
+		792FB8BA1CC51EB200903A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8B81CC51EB200903A9C /* Main.storyboard */; };
+		792FB8BC1CC51EB200903A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8BB1CC51EB200903A9C /* Assets.xcassets */; };
+		792FB8BF1CC51EB200903A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8BD1CC51EB200903A9C /* LaunchScreen.storyboard */; };
+		792FB8CA1CC51EB200903A9C /* CanolaSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8C91CC51EB200903A9C /* CanolaSampleTests.swift */; };
+		792FB8D51CC51EB200903A9C /* CanolaSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8D41CC51EB200903A9C /* CanolaSampleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		792FB8C61CC51EB200903A9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 792FB8A91CC51EB200903A9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 792FB8B01CC51EB200903A9C;
+			remoteInfo = CanolaSample;
+		};
+		792FB8D11CC51EB200903A9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 792FB8A91CC51EB200903A9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 792FB8B01CC51EB200903A9C;
+			remoteInfo = CanolaSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		792FB8B11CC51EB200903A9C /* CanolaSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanolaSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		792FB8B41CC51EB200903A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		792FB8B61CC51EB200903A9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		792FB8B91CC51EB200903A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		792FB8BB1CC51EB200903A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		792FB8BE1CC51EB200903A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		792FB8C01CC51EB200903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		792FB8C51CC51EB200903A9C /* CanolaSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanolaSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		792FB8C91CC51EB200903A9C /* CanolaSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanolaSampleTests.swift; sourceTree = "<group>"; };
+		792FB8CB1CC51EB200903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		792FB8D01CC51EB200903A9C /* CanolaSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanolaSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		792FB8D41CC51EB200903A9C /* CanolaSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanolaSampleUITests.swift; sourceTree = "<group>"; };
+		792FB8D61CC51EB200903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		792FB8AE1CC51EB200903A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792FB8C21CC51EB200903A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792FB8CD1CC51EB200903A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		792FB8A81CC51EB200903A9C = {
+			isa = PBXGroup;
+			children = (
+				792FB8B31CC51EB200903A9C /* CanolaSample */,
+				792FB8C81CC51EB200903A9C /* CanolaSampleTests */,
+				792FB8D31CC51EB200903A9C /* CanolaSampleUITests */,
+				792FB8B21CC51EB200903A9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		792FB8B21CC51EB200903A9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				792FB8B11CC51EB200903A9C /* CanolaSample.app */,
+				792FB8C51CC51EB200903A9C /* CanolaSampleTests.xctest */,
+				792FB8D01CC51EB200903A9C /* CanolaSampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		792FB8B31CC51EB200903A9C /* CanolaSample */ = {
+			isa = PBXGroup;
+			children = (
+				792FB8B41CC51EB200903A9C /* AppDelegate.swift */,
+				792FB8B61CC51EB200903A9C /* ViewController.swift */,
+				792FB8B81CC51EB200903A9C /* Main.storyboard */,
+				792FB8BB1CC51EB200903A9C /* Assets.xcassets */,
+				792FB8BD1CC51EB200903A9C /* LaunchScreen.storyboard */,
+				792FB8C01CC51EB200903A9C /* Info.plist */,
+			);
+			path = CanolaSample;
+			sourceTree = "<group>";
+		};
+		792FB8C81CC51EB200903A9C /* CanolaSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				792FB8C91CC51EB200903A9C /* CanolaSampleTests.swift */,
+				792FB8CB1CC51EB200903A9C /* Info.plist */,
+			);
+			path = CanolaSampleTests;
+			sourceTree = "<group>";
+		};
+		792FB8D31CC51EB200903A9C /* CanolaSampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				792FB8D41CC51EB200903A9C /* CanolaSampleUITests.swift */,
+				792FB8D61CC51EB200903A9C /* Info.plist */,
+			);
+			path = CanolaSampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		792FB8B01CC51EB200903A9C /* CanolaSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 792FB8D91CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSample" */;
+			buildPhases = (
+				792FB8AD1CC51EB200903A9C /* Sources */,
+				792FB8AE1CC51EB200903A9C /* Frameworks */,
+				792FB8AF1CC51EB200903A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CanolaSample;
+			productName = CanolaSample;
+			productReference = 792FB8B11CC51EB200903A9C /* CanolaSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		792FB8C41CC51EB200903A9C /* CanolaSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 792FB8DC1CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSampleTests" */;
+			buildPhases = (
+				792FB8C11CC51EB200903A9C /* Sources */,
+				792FB8C21CC51EB200903A9C /* Frameworks */,
+				792FB8C31CC51EB200903A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				792FB8C71CC51EB200903A9C /* PBXTargetDependency */,
+			);
+			name = CanolaSampleTests;
+			productName = CanolaSampleTests;
+			productReference = 792FB8C51CC51EB200903A9C /* CanolaSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		792FB8CF1CC51EB200903A9C /* CanolaSampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 792FB8DF1CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSampleUITests" */;
+			buildPhases = (
+				792FB8CC1CC51EB200903A9C /* Sources */,
+				792FB8CD1CC51EB200903A9C /* Frameworks */,
+				792FB8CE1CC51EB200903A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				792FB8D21CC51EB200903A9C /* PBXTargetDependency */,
+			);
+			name = CanolaSampleUITests;
+			productName = CanolaSampleUITests;
+			productReference = 792FB8D01CC51EB200903A9C /* CanolaSampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		792FB8A91CC51EB200903A9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "史翔新";
+				TargetAttributes = {
+					792FB8B01CC51EB200903A9C = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					792FB8C41CC51EB200903A9C = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 792FB8B01CC51EB200903A9C;
+					};
+					792FB8CF1CC51EB200903A9C = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 792FB8B01CC51EB200903A9C;
+					};
+				};
+			};
+			buildConfigurationList = 792FB8AC1CC51EB200903A9C /* Build configuration list for PBXProject "CanolaSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 792FB8A81CC51EB200903A9C;
+			productRefGroup = 792FB8B21CC51EB200903A9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				792FB8B01CC51EB200903A9C /* CanolaSample */,
+				792FB8C41CC51EB200903A9C /* CanolaSampleTests */,
+				792FB8CF1CC51EB200903A9C /* CanolaSampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		792FB8AF1CC51EB200903A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				792FB8BF1CC51EB200903A9C /* LaunchScreen.storyboard in Resources */,
+				792FB8BC1CC51EB200903A9C /* Assets.xcassets in Resources */,
+				792FB8BA1CC51EB200903A9C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792FB8C31CC51EB200903A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792FB8CE1CC51EB200903A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		792FB8AD1CC51EB200903A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				792FB8B71CC51EB200903A9C /* ViewController.swift in Sources */,
+				792FB8B51CC51EB200903A9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792FB8C11CC51EB200903A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				792FB8CA1CC51EB200903A9C /* CanolaSampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792FB8CC1CC51EB200903A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				792FB8D51CC51EB200903A9C /* CanolaSampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		792FB8C71CC51EB200903A9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 792FB8B01CC51EB200903A9C /* CanolaSample */;
+			targetProxy = 792FB8C61CC51EB200903A9C /* PBXContainerItemProxy */;
+		};
+		792FB8D21CC51EB200903A9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 792FB8B01CC51EB200903A9C /* CanolaSample */;
+			targetProxy = 792FB8D11CC51EB200903A9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		792FB8B81CC51EB200903A9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				792FB8B91CC51EB200903A9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		792FB8BD1CC51EB200903A9C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				792FB8BE1CC51EB200903A9C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		792FB8D71CC51EB200903A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		792FB8D81CC51EB200903A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		792FB8DA1CC51EB200903A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CanolaSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.crazism.CanolaSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		792FB8DB1CC51EB200903A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CanolaSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.crazism.CanolaSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		792FB8DD1CC51EB200903A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CanolaSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.crazism.CanolaSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CanolaSample.app/CanolaSample";
+			};
+			name = Debug;
+		};
+		792FB8DE1CC51EB200903A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CanolaSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.crazism.CanolaSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CanolaSample.app/CanolaSample";
+			};
+			name = Release;
+		};
+		792FB8E01CC51EB200903A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CanolaSampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.crazism.CanolaSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CanolaSample;
+			};
+			name = Debug;
+		};
+		792FB8E11CC51EB200903A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CanolaSampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.crazism.CanolaSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CanolaSample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		792FB8AC1CC51EB200903A9C /* Build configuration list for PBXProject "CanolaSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				792FB8D71CC51EB200903A9C /* Debug */,
+				792FB8D81CC51EB200903A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		792FB8D91CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				792FB8DA1CC51EB200903A9C /* Debug */,
+				792FB8DB1CC51EB200903A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		792FB8DC1CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				792FB8DD1CC51EB200903A9C /* Debug */,
+				792FB8DE1CC51EB200903A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		792FB8DF1CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				792FB8E01CC51EB200903A9C /* Debug */,
+				792FB8E11CC51EB200903A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 792FB8A91CC51EB200903A9C /* Project object */;
+}
