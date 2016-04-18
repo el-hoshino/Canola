@@ -1,0 +1,6 @@
+#start
+
+.Init
+.Call	file: general01,	label: start
+
+.End

@@ -14,6 +14,8 @@
 		792FB8BF1CC51EB200903A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8BD1CC51EB200903A9C /* LaunchScreen.storyboard */; };
 		792FB8CA1CC51EB200903A9C /* CanolaSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8C91CC51EB200903A9C /* CanolaSampleTests.swift */; };
 		792FB8D51CC51EB200903A9C /* CanolaSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8D41CC51EB200903A9C /* CanolaSampleUITests.swift */; };
+		792FB8E51CC521DE00903A9C /* main.script in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8E41CC521DE00903A9C /* main.script */; };
+		792FB8E71CC522DD00903A9C /* general01.script in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8E61CC522DD00903A9C /* general01.script */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		792FB8D01CC51EB200903A9C /* CanolaSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanolaSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		792FB8D41CC51EB200903A9C /* CanolaSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanolaSampleUITests.swift; sourceTree = "<group>"; };
 		792FB8D61CC51EB200903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		792FB8E41CC521DE00903A9C /* main.script */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.script; sourceTree = "<group>"; };
+		792FB8E61CC522DD00903A9C /* general01.script */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = general01.script; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			children = (
 				792FB8B41CC51EB200903A9C /* AppDelegate.swift */,
 				792FB8B61CC51EB200903A9C /* ViewController.swift */,
+				792FB8E21CC521C100903A9C /* Resource */,
 				792FB8B81CC51EB200903A9C /* Main.storyboard */,
 				792FB8BB1CC51EB200903A9C /* Assets.xcassets */,
 				792FB8BD1CC51EB200903A9C /* LaunchScreen.storyboard */,
@@ -123,6 +128,23 @@
 				792FB8D61CC51EB200903A9C /* Info.plist */,
 			);
 			path = CanolaSampleUITests;
+			sourceTree = "<group>";
+		};
+		792FB8E21CC521C100903A9C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				792FB8E31CC521C100903A9C /* Script */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		792FB8E31CC521C100903A9C /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				792FB8E41CC521DE00903A9C /* main.script */,
+				792FB8E61CC522DD00903A9C /* general01.script */,
+			);
+			path = Script;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +251,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792FB8E71CC522DD00903A9C /* general01.script in Resources */,
 				792FB8BF1CC51EB200903A9C /* LaunchScreen.storyboard in Resources */,
 				792FB8BC1CC51EB200903A9C /* Assets.xcassets in Resources */,
 				792FB8BA1CC51EB200903A9C /* Main.storyboard in Resources */,
+				792FB8E51CC521DE00903A9C /* main.script in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +508,7 @@
 				792FB8DB1CC51EB200903A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		792FB8DC1CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +517,7 @@
 				792FB8DE1CC51EB200903A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		792FB8DF1CC51EB200903A9C /* Build configuration list for PBXNativeTarget "CanolaSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +526,7 @@
 				792FB8E11CC51EB200903A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
