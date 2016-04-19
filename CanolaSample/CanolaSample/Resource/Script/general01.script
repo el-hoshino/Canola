@@ -1,18 +1,18 @@
-#start
+.Label		start
 
 .HideScreen	time: 0,	color: 0x000000
 
-.ShowBG		tag: 1,		file: BG001,	time: 0
-.ShowCHA	tag: 1,		file: CHA001,	time: 0,	name: Canola
+.ShowBG		BG001,		tag: 1,		time: 0
+.ShowCHA	CHA001,		tag: 1,		time: 0,	name: Canola
 .ShowScreen	time: 0.5,	wait: true
 
-.Message	name: Canola, voice: VOC001, 初めまして
+.Message	speaker: Canola, voice: VOC001, 初めまして
 
 @Canola:	Canolaエンジンへようこそ
 
 .ShowCHA	tag:1,		file: CHA002,	time: 0.5
 
-@Canola:	これはCanolaエンジンを使ったADVゲームのサンプルです
+@Canola:	voice: VOC002, これはCanolaエンジンを使ったADVゲームのサンプルです
 .Message	話者なしのメッセージはこんな感じです
 もしくは特殊記号じゃない文字で始まる行は全てメッセージとみなされます
 
