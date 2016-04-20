@@ -10,7 +10,7 @@
 
 @Canola:	Canolaエンジンへようこそ
 
-.ShowCHA	tag:1,		file: CHA002,	time: 0.5
+.ShowCHA	CHA002,		tag:1,		time: 0.5,	name: Canola
 
 @Canola:	voice: VOC002, これはCanolaエンジンを使ったADVゲームのサンプルです
 .Message	話者なしのメッセージはこんな感じです
