@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Canola
 
 class ViewController: UIViewController {
 
@@ -19,7 +20,10 @@ class ViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
-
+	
+	override func viewDidAppear(animated: Bool) {
+		let controller = Canola.ViewController()
+		self.presentViewController(controller, animated: true, completion: nil)
+	}
+	
 }
-

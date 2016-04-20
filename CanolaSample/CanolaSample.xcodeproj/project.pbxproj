@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79129E991CC7D52400A173F5 /* Canola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79129E981CC7D52400A173F5 /* Canola.framework */; };
+		79129E9A1CC7D52400A173F5 /* Canola.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79129E981CC7D52400A173F5 /* Canola.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		792FB8B51CC51EB200903A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8B41CC51EB200903A9C /* AppDelegate.swift */; };
 		792FB8B71CC51EB200903A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8B61CC51EB200903A9C /* ViewController.swift */; };
 		792FB8BA1CC51EB200903A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8B81CC51EB200903A9C /* Main.storyboard */; };
@@ -35,7 +37,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		79129E9B1CC7D52400A173F5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				79129E9A1CC7D52400A173F5 /* Canola.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		79129E981CC7D52400A173F5 /* Canola.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Canola.framework; path = "/Users/shonetesmith/Library/Developer/Xcode/DerivedData/Canola-galfnthmngxcjygsyddbnrtietmw/Build/Products/Debug-iphonesimulator/Canola.framework"; sourceTree = "<absolute>"; };
 		792FB8B11CC51EB200903A9C /* CanolaSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanolaSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		792FB8B41CC51EB200903A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		792FB8B61CC51EB200903A9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79129E991CC7D52400A173F5 /* Canola.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,7 @@
 		792FB8A81CC51EB200903A9C = {
 			isa = PBXGroup;
 			children = (
+				79129E981CC7D52400A173F5 /* Canola.framework */,
 				792FB8B31CC51EB200903A9C /* CanolaSample */,
 				792FB8C81CC51EB200903A9C /* CanolaSampleTests */,
 				792FB8D31CC51EB200903A9C /* CanolaSampleUITests */,
@@ -157,6 +176,7 @@
 				792FB8AD1CC51EB200903A9C /* Sources */,
 				792FB8AE1CC51EB200903A9C /* Frameworks */,
 				792FB8AF1CC51EB200903A9C /* Resources */,
+				79129E9B1CC7D52400A173F5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
