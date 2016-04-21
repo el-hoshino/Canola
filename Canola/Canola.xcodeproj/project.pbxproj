@@ -11,6 +11,7 @@
 		79129E971CC7D40100A173F5 /* ParserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129E961CC7D40100A173F5 /* ParserModel.swift */; };
 		79129E9E1CC7D82200A173F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129E9D1CC7D82200A173F5 /* ViewController.swift */; };
 		79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129EA01CC7D91D00A173F5 /* EngineModel.swift */; };
+		79182EAA1CC9398200D207A2 /* ScriptStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79182EA91CC9398200D207A2 /* ScriptStack.swift */; };
 		792FB8921CC51E7B00903A9C /* Canola.h in Headers */ = {isa = PBXBuildFile; fileRef = 792FB8911CC51E7B00903A9C /* Canola.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		792FB8991CC51E7B00903A9C /* Canola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792FB88E1CC51E7B00903A9C /* Canola.framework */; };
 		792FB89E1CC51E7B00903A9C /* CanolaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB89D1CC51E7B00903A9C /* CanolaTests.swift */; };
@@ -34,6 +35,7 @@
 		79129E961CC7D40100A173F5 /* ParserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserModel.swift; sourceTree = "<group>"; };
 		79129E9D1CC7D82200A173F5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79129EA01CC7D91D00A173F5 /* EngineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineModel.swift; sourceTree = "<group>"; };
+		79182EA91CC9398200D207A2 /* ScriptStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptStack.swift; sourceTree = "<group>"; };
 		792FB88E1CC51E7B00903A9C /* Canola.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Canola.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792FB8911CC51E7B00903A9C /* Canola.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Canola.h; sourceTree = "<group>"; };
 		792FB8931CC51E7B00903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				79129E961CC7D40100A173F5 /* ParserModel.swift */,
+				79182EA91CC9398200D207A2 /* ScriptStack.swift */,
 				792FB8EC1CC5393500903A9C /* Script.swift */,
 				792FB8EA1CC5391F00903A9C /* Command.swift */,
 			);
@@ -278,6 +281,7 @@
 				79129E951CC7D3D500A173F5 /* AdventureController.swift in Sources */,
 				79129E971CC7D40100A173F5 /* ParserModel.swift in Sources */,
 				792FB8EB1CC5391F00903A9C /* Command.swift in Sources */,
+				79182EAA1CC9398200D207A2 /* ScriptStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,21 +10,30 @@ import UIKit
 
 class ParserModel: NSObject {
 	
-	var script: Script
+	private var currentScript: Script
+	private var currentLine: Int
+	private var scriptStack: ScriptStack
 	
 	override init() {
+		
 		do {
 			let script = try Script(filename: "general01")
-			self.script = script
+			let startLine = script.labels["start"] ?? 0
+			self.currentScript = script
+			self.currentLine = startLine
+			self.scriptStack = ScriptStack.initial()
 			
 		} catch let error {
 			print(error)
-			self.script = Script(lines: [])
+			self.currentScript = Script(labels: [:], lines: [])
+			self.currentLine = 0
+			self.scriptStack = ScriptStack.initial()
 		}
+		
 	}
 	
 	func parse() {
-		self.script.lines.forEach { (command) in
+		self.currentScript.lines.forEach { (command) in
 			print(command)
 		}
 	}
