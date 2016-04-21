@@ -24,11 +24,17 @@ class ParserModel: NSObject {
 			self.scriptStack = ScriptStack.initial()
 			
 		} catch let error {
-			print(error)
+			Console.shared.warning(error)
 			self.currentScript = Script(labels: [:], lines: [])
 			self.currentLine = 0
 			self.scriptStack = ScriptStack.initial()
 		}
+		
+	}
+	
+	deinit {
+		
+		Console.shared.info("ParserModel deinited")
 		
 	}
 	
