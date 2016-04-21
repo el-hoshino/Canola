@@ -10,17 +10,10 @@ import UIKit
 
 public class ViewController: UIViewController {
 	
-	private var _adventureController: AdventureController?
-	var adventureController: AdventureController {
-		if let controller = self._adventureController {
-			return controller
-			
-		} else {
-			let controller = AdventureController()
-			self._adventureController = controller
-			return controller
-		}
-	}
+	lazy var adventureController: AdventureController  = {
+		let controller = AdventureController()
+		return controller
+	}()
 	
     override public func viewDidLoad() {
         super.viewDidLoad()

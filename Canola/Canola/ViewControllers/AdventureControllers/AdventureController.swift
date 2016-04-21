@@ -10,17 +10,10 @@ import UIKit
 
 class AdventureController: UIViewController {
 	
-	private var _engine: EngineModel?
-	var engine: EngineModel {
-		if let engine = self._engine {
-			return engine
-			
-		} else {
-			let engine = EngineModel()
-			self._engine = engine
-			return engine
-		}
-	}
+	lazy var engine: EngineModel = {
+		let engine = EngineModel()
+		return engine
+	}()
 
     override func viewDidLoad() {
         super.viewDidLoad()
