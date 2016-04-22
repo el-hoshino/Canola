@@ -1,8 +1,8 @@
 //
-//  Command.swift
+//  CommandInitializer.swift
 //  Canola
 //
-//  Created by 史翔新 on 2016/04/19.
+//  Created by 史翔新 on 2016/04/23.
 //  Copyright © 2016年 史翔新. All rights reserved.
 //
 
@@ -84,37 +84,8 @@ private extension String {
 	
 }
 
-extension Script {
-	
-	enum Command {
-		
-		private static let commandTypeStringSeperatorSet = NSCharacterSet(charactersInString: " \t")
-		
-		case Label(label: String)
-		
-		case Init
-		
-		case ShowScreen(time: NSTimeInterval, wait: Bool)
-		case HideScreen(time: NSTimeInterval, color: UIColor, wait: Bool)
-		
-		case ShowBG(file: String, tag: Int, duration: NSTimeInterval)
-		case HideBG(tag: Int, duration: NSTimeInterval)
-		
-		case ShowCHA(file: String, tag: Int, characterName: String, duration: NSTimeInterval)
-		case HideCHA(tag: Int, duration: NSTimeInterval)
-		
-		case Message(speaker: String?, voice: String?, message: String)
-		
-		case Return
-		
-		case End
-		
-	}
-	
-}
-
 extension Script.Command {
-
+	
 	enum InitError: ErrorType {
 		case NonOptionalParameterMissing(command: String)
 		case InvalidCommandString(string: String)
@@ -127,6 +98,8 @@ extension Script.Command {
 		}
 		
 		switch command.type {
+			
+			// MARK: MetaCommand
 		case ".Label":
 			var label: String?
 			command.parameters.forEach({ (parameter) in
@@ -137,11 +110,15 @@ extension Script.Command {
 			guard let labelName = label else {
 				throw InitError.NonOptionalParameterMissing(command: commandString)
 			}
-			self = .Label(label: labelName)
+			let metaCommand = MetaCommand.Label(label: labelName)
+			self = .Meta(command: metaCommand)
 			
+			// MARK: GeneralCommand
 		case ".Init":
-			self = .Init
+			let generalCommand = GeneralCommand.Init
+			self = .General(command: generalCommand)
 			
+			// MARK: GraphicControlCommand
 		case ".ShowScreen":
 			var time: NSTimeInterval = 1
 			var wait = false
@@ -149,8 +126,7 @@ extension Script.Command {
 				if let name = parameter.name {
 					switch name {
 					case "time":
-						let timeValue = NSTimeInterval(parameter.value) ?? time
-						time = timeValue
+						time =? NSTimeInterval(parameter.value)
 						
 					case "wait":
 						let waitValue = parameter.value
@@ -161,7 +137,8 @@ extension Script.Command {
 					}
 				}
 			})
-			self = .ShowScreen(time: time, wait: wait)
+			let graphicCommand = GraphicControlCommand.ShowScreen(duration: time, waitUntilEnd: wait)
+			self = .GraphicControl(command: graphicCommand)
 			
 		case ".HideScreen":
 			var time: NSTimeInterval = 1
@@ -196,12 +173,14 @@ extension Script.Command {
 					}
 				}
 			})
-			self = .HideScreen(time: time, color: color, wait: wait)
+			let graphicCommand = GraphicControlCommand.HideScreen(duration: time, color: color, waitUntilEnd: wait)
+			self = .GraphicControl(command: graphicCommand)
 			
 		case ".ShowBG":
 			var bgFile: String?
 			var bgTag = 0
 			var time: NSTimeInterval = 1
+			var wait = false
 			command.parameters.forEach({ (parameter) in
 				if let name = parameter.name {
 					switch name {
@@ -210,6 +189,10 @@ extension Script.Command {
 						
 					case "time":
 						time =? NSTimeInterval(parameter.value)
+						
+					case "wait":
+						let waitValue = parameter.value
+						wait = waitValue == "true" ? true : false
 						
 					default:
 						break
@@ -222,11 +205,13 @@ extension Script.Command {
 			guard let file = bgFile else {
 				throw InitError.InvalidCommandString(string: commandString)
 			}
-			self = .ShowBG(file: file, tag: bgTag, duration: time)
+			let graphicCommand = GraphicControlCommand.ShowBG(file: file, tag: bgTag, duration: time, waitUntilEnd: wait)
+			self = .GraphicControl(command: graphicCommand)
 			
 		case ".HideBG":
 			var bgTag = 0
 			var time: NSTimeInterval = 1
+			var wait = false
 			command.parameters.forEach({ (parameter) in
 				if let name = parameter.name {
 					switch name {
@@ -236,18 +221,24 @@ extension Script.Command {
 					case "time":
 						time =? NSTimeInterval(parameter.value)
 						
+					case "wait":
+						let waitValue = parameter.value
+						wait = waitValue == "true" ? true : false
+						
 					default:
 						break
 					}
 				}
 			})
-			self = .HideBG(tag: bgTag, duration: time)
+			let graphicCommand = GraphicControlCommand.HideBG(tag: bgTag, duration: time, waitUntilEnd: wait)
+			self = .GraphicControl(command: graphicCommand)
 			
 		case ".ShowCHA":
 			var chaFile: String?
 			var chaTag = 0
 			var chaName = String()
 			var time: NSTimeInterval = 1
+			var wait = false
 			command.parameters.forEach({ (parameter) in
 				if let name = parameter.name {
 					switch name {
@@ -260,6 +251,10 @@ extension Script.Command {
 					case "time":
 						time =? NSTimeInterval(parameter.value)
 						
+					case "wait":
+						let waitValue = parameter.value
+						wait = waitValue == "true" ? true : false
+						
 					default:
 						break
 					}
@@ -271,11 +266,13 @@ extension Script.Command {
 			guard let file = chaFile else {
 				throw InitError.NonOptionalParameterMissing(command: commandString)
 			}
-			self = .ShowCHA(file: file, tag: chaTag, characterName: chaName, duration: time)
+			let graphicCommand = GraphicControlCommand.ShowCHA(file: file, tag: chaTag, characterName: chaName, duration: time, waitUntilEnd: wait)
+			self = .GraphicControl(command: graphicCommand)
 			
 		case ".HideCHA":
 			var chaTag = 0
 			var time: NSTimeInterval = 1
+			var wait = false
 			command.parameters.forEach({ (parameter) in
 				if let name = parameter.name {
 					switch name {
@@ -285,13 +282,118 @@ extension Script.Command {
 					case "time":
 						time =? NSTimeInterval(parameter.value)
 						
+					case "wait":
+						let waitValue = parameter.value
+						wait = waitValue == "true" ? true : false
+						
 					default:
 						break
 					}
 				}
 			})
-			self = .HideCHA(tag: chaTag, duration: time)
+			let graphicCommand = GraphicControlCommand.HideCHA(tag: chaTag, duration: time, waitUntilEnd: wait)
+			self = .GraphicControl(command: graphicCommand)
 			
+			// MARK: AudioControlCommand
+		case ".PlayBGM":
+			var bgmFile: String?
+			var channel = 0
+			command.parameters.forEach({ (parameter) in
+				if let name = parameter.name {
+					switch name {
+					case "channel":
+						channel =? Int(parameter.value)
+						
+					default:
+						break
+					}
+					
+				} else {
+					bgmFile = parameter.value
+				}
+			})
+			guard let file = bgmFile else {
+				throw InitError.NonOptionalParameterMissing(command: commandString)
+			}
+			let audioCommand = AudioControlCommand.PlayBGM(file: file, channel: channel)
+			self = .AudioControl(command: audioCommand)
+			
+		case ".StopBGM":
+			var channel = 0
+			command.parameters.forEach({ (parameter) in
+				if let name = parameter.name {
+					switch name {
+					case "channel":
+						channel =? Int(parameter.value)
+						
+					default:
+						break
+					}
+				}
+			})
+			let audioCommand = AudioControlCommand.StopBGM(channel: channel)
+			self = .AudioControl(command: audioCommand)
+			
+			// MARK: FlowControlCommand
+		case ".Jump":
+			var jumpScript: String?
+			var jumpLabel: String?
+			command.parameters.forEach({ (parameter) in
+				if let name = parameter.name {
+					switch name {
+					case "file":
+						jumpScript = parameter.value
+						
+					case "label":
+						jumpLabel = parameter.value
+						
+					default:
+						break
+					}
+				} else {
+					jumpLabel = parameter.value
+				}
+			})
+			guard let label = jumpLabel else {
+				throw InitError.NonOptionalParameterMissing(command: commandString)
+			}
+			let flowControlCommand = FlowControlCommand.Jump(script: jumpScript, label: label)
+			self = .FlowControl(command: flowControlCommand)
+			
+		case ".Call":
+			var callScript: String?
+			var callLabel: String?
+			command.parameters.forEach({ (parameter) in
+				if let name = parameter.name {
+					switch name {
+					case "file":
+						callScript = parameter.value
+						
+					case "label":
+						callLabel = parameter.value
+						
+					default:
+						break
+					}
+				} else {
+					callLabel = parameter.value
+				}
+			})
+			guard let label = callLabel else {
+				throw InitError.NonOptionalParameterMissing(command: commandString)
+			}
+			let flowControlCommand = FlowControlCommand.Call(script: callScript, label: label)
+			self = .FlowControl(command: flowControlCommand)
+			
+		case ".Return":
+			let flowControlCommand = FlowControlCommand.Return
+			self = .FlowControl(command: flowControlCommand)
+			
+		case ".End":
+			let flowControlCommand = FlowControlCommand.End
+			self = .FlowControl(command: flowControlCommand)
+			
+			// MARK: UserInteractionCommand
 		case ".Message":
 			var speaker: String?
 			var voice: String?
@@ -316,13 +418,12 @@ extension Script.Command {
 			guard let messageText = message else {
 				throw InitError.NonOptionalParameterMissing(command: commandString)
 			}
-			self = .Message(speaker: speaker, voice: voice, message: messageText)
+			let userInteractionCommand = UserInteractionCommand.Message(speaker: speaker, voice: voice, message: messageText)
+			self = .UserInteraction(command: userInteractionCommand)
 			
-		case ".Return":
-			self = .Return
-			
-		case ".End":
-			self = .End
+		case ".Selection":
+			let userInteractionCommand = UserInteractionCommand.Selection
+			self = .UserInteraction(command: userInteractionCommand)
 			
 		default:
 			throw InitError.InvalidCommandString(string: commandString)

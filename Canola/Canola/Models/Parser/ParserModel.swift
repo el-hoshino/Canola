@@ -14,21 +14,19 @@ class ParserModel: NSObject {
 	private var currentLine: Int
 	private var scriptStack: ScriptStack
 	
-	override init() {
+	private var isStandBying = true
+	
+	private var isParsingEnabled: Bool {
+		return !self.isStandBying
+	}
+	
+	init(initialScript: String) throws {
 		
-		do {
-			let script = try Script(filename: "general01")
-			let startLine = script.labels["start"] ?? 0
-			self.currentScript = script
-			self.currentLine = startLine
-			self.scriptStack = ScriptStack.initial()
-			
-		} catch let error {
-			Console.shared.warning(error)
-			self.currentScript = Script(labels: [:], lines: [])
-			self.currentLine = 0
-			self.scriptStack = ScriptStack.initial()
-		}
+		let script = try Script(filename: initialScript)
+		let startLine = script.getIndex(forLabel: "start") ?? 0
+		self.currentScript = script
+		self.currentLine = startLine
+		self.scriptStack = ScriptStack.initial()
 		
 	}
 	
@@ -38,10 +36,53 @@ class ParserModel: NSObject {
 		
 	}
 	
+	func enableParsing() {
+		self.isStandBying = false
+	}
+	
 	func parse() {
-		self.currentScript.lines.forEach { (command) in
-			print(command)
+		
+		guard self.isParsingEnabled else {
+			return
 		}
+		
+		do {
+			let command = try self.currentScript.getCommand(at: self.currentLine)
+			Console.shared.info(command)
+			
+			switch command {
+			case .Meta(command: let command):
+				self.parseMetaCommand(command)
+				self.currentLine.increase()
+				
+			case .General(command: let command):
+				self.parseGeneralCommand(command)
+				self.currentLine.increase()
+				
+			case .GraphicControl(command: let command):
+				self.parseGraphincCommand(command)
+				self.currentLine.increase()
+				
+			case .AudioControl(command: let command):
+				self.parseAudioCommand(command)
+				self.currentLine.increase()
+				
+			case .FlowControl(command: let command):
+				self.parseFlowControlCommand(command)
+				self.currentLine.increase()
+				
+			case .UserInteraction(command: let command):
+				self.parseUserInteractionCommand(command)
+				self.currentLine.increase()
+			}
+			
+			return parse()
+			
+		} catch let error {
+			Console.shared.warning(error)
+			return
+		}
+		
 	}
 	
 }

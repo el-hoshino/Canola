@@ -13,12 +13,26 @@
 		79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129EA01CC7D91D00A173F5 /* EngineModel.swift */; };
 		79182EAA1CC9398200D207A2 /* ScriptStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79182EA91CC9398200D207A2 /* ScriptStack.swift */; };
 		79182EAD1CC93C2700D207A2 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79182EAC1CC93C2700D207A2 /* Console.swift */; };
+		7922D5FA1CCA8ED10008B287 /* ParserMetaCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D5F91CCA8ED10008B287 /* ParserMetaCommand.swift */; };
+		7922D6001CCA93ED0008B287 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D5FF1CCA93ED0008B287 /* Extensions.swift */; };
+		7922D6021CCA94010008B287 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6011CCA94010008B287 /* Operators.swift */; };
+		7922D6051CCA94450008B287 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6031CCA94450008B287 /* Command.swift */; };
+		7922D6061CCA94450008B287 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6041CCA94450008B287 /* Script.swift */; };
+		7922D6081CCA946D0008B287 /* CommandInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6071CCA946D0008B287 /* CommandInitializer.swift */; };
+		7922D60A1CCA95820008B287 /* MetaCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6091CCA95820008B287 /* MetaCommand.swift */; };
+		7922D60C1CCA95D20008B287 /* GeneralCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D60B1CCA95D20008B287 /* GeneralCommand.swift */; };
+		7922D60E1CCA96180008B287 /* GraphicControlCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D60D1CCA96180008B287 /* GraphicControlCommand.swift */; };
+		7922D6101CCA97970008B287 /* AudioControlCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D60F1CCA97970008B287 /* AudioControlCommand.swift */; };
+		7922D6121CCA97FF0008B287 /* FlowControlCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6111CCA97FF0008B287 /* FlowControlCommand.swift */; };
+		7922D6141CCA985E0008B287 /* UserInteractionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6131CCA985E0008B287 /* UserInteractionCommand.swift */; };
+		7922D6161CCA99F90008B287 /* ParserGeneralCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6151CCA99F90008B287 /* ParserGeneralCommand.swift */; };
+		7922D6181CCA9A590008B287 /* ParserGraphicCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6171CCA9A590008B287 /* ParserGraphicCommand.swift */; };
+		7922D61A1CCA9B470008B287 /* ParserAudioCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6191CCA9B470008B287 /* ParserAudioCommand.swift */; };
+		7922D61C1CCA9B970008B287 /* ParserFlowControlCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D61B1CCA9B970008B287 /* ParserFlowControlCommand.swift */; };
+		7922D61E1CCA9BE30008B287 /* ParserUserInteractionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D61D1CCA9BE30008B287 /* ParserUserInteractionCommand.swift */; };
 		792FB8921CC51E7B00903A9C /* Canola.h in Headers */ = {isa = PBXBuildFile; fileRef = 792FB8911CC51E7B00903A9C /* Canola.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		792FB8991CC51E7B00903A9C /* Canola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792FB88E1CC51E7B00903A9C /* Canola.framework */; };
 		792FB89E1CC51E7B00903A9C /* CanolaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB89D1CC51E7B00903A9C /* CanolaTests.swift */; };
-		792FB8EB1CC5391F00903A9C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8EA1CC5391F00903A9C /* Command.swift */; };
-		792FB8ED1CC5393500903A9C /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8EC1CC5393500903A9C /* Script.swift */; };
-		792FB8F01CC53B3B00903A9C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8EF1CC53B3B00903A9C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +52,29 @@
 		79129EA01CC7D91D00A173F5 /* EngineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineModel.swift; sourceTree = "<group>"; };
 		79182EA91CC9398200D207A2 /* ScriptStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptStack.swift; sourceTree = "<group>"; };
 		79182EAC1CC93C2700D207A2 /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
+		7922D5F91CCA8ED10008B287 /* ParserMetaCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserMetaCommand.swift; sourceTree = "<group>"; };
+		7922D5FF1CCA93ED0008B287 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7922D6011CCA94010008B287 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		7922D6031CCA94450008B287 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		7922D6041CCA94450008B287 /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		7922D6071CCA946D0008B287 /* CommandInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandInitializer.swift; sourceTree = "<group>"; };
+		7922D6091CCA95820008B287 /* MetaCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaCommand.swift; sourceTree = "<group>"; };
+		7922D60B1CCA95D20008B287 /* GeneralCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCommand.swift; sourceTree = "<group>"; };
+		7922D60D1CCA96180008B287 /* GraphicControlCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicControlCommand.swift; sourceTree = "<group>"; };
+		7922D60F1CCA97970008B287 /* AudioControlCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioControlCommand.swift; sourceTree = "<group>"; };
+		7922D6111CCA97FF0008B287 /* FlowControlCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowControlCommand.swift; sourceTree = "<group>"; };
+		7922D6131CCA985E0008B287 /* UserInteractionCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionCommand.swift; sourceTree = "<group>"; };
+		7922D6151CCA99F90008B287 /* ParserGeneralCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserGeneralCommand.swift; sourceTree = "<group>"; };
+		7922D6171CCA9A590008B287 /* ParserGraphicCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserGraphicCommand.swift; sourceTree = "<group>"; };
+		7922D6191CCA9B470008B287 /* ParserAudioCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserAudioCommand.swift; sourceTree = "<group>"; };
+		7922D61B1CCA9B970008B287 /* ParserFlowControlCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserFlowControlCommand.swift; sourceTree = "<group>"; };
+		7922D61D1CCA9BE30008B287 /* ParserUserInteractionCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserUserInteractionCommand.swift; sourceTree = "<group>"; };
 		792FB88E1CC51E7B00903A9C /* Canola.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Canola.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792FB8911CC51E7B00903A9C /* Canola.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Canola.h; sourceTree = "<group>"; };
 		792FB8931CC51E7B00903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		792FB8981CC51E7B00903A9C /* CanolaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanolaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		792FB89D1CC51E7B00903A9C /* CanolaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanolaTests.swift; sourceTree = "<group>"; };
 		792FB89F1CC51E7B00903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		792FB8EA1CC5391F00903A9C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		792FB8EC1CC5393500903A9C /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
-		792FB8EF1CC53B3B00903A9C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +137,31 @@
 			path = Console;
 			sourceTree = "<group>";
 		};
+		7922D5FB1CCA93D80008B287 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7922D5FF1CCA93ED0008B287 /* Extensions.swift */,
+				7922D6011CCA94010008B287 /* Operators.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7922D5FC1CCA93D80008B287 /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				7922D6041CCA94450008B287 /* Script.swift */,
+				7922D6031CCA94450008B287 /* Command.swift */,
+				7922D6091CCA95820008B287 /* MetaCommand.swift */,
+				7922D60B1CCA95D20008B287 /* GeneralCommand.swift */,
+				7922D60D1CCA96180008B287 /* GraphicControlCommand.swift */,
+				7922D60F1CCA97970008B287 /* AudioControlCommand.swift */,
+				7922D6111CCA97FF0008B287 /* FlowControlCommand.swift */,
+				7922D6131CCA985E0008B287 /* UserInteractionCommand.swift */,
+				7922D6071CCA946D0008B287 /* CommandInitializer.swift */,
+			);
+			path = Script;
+			sourceTree = "<group>";
+		};
 		792FB8841CC51E7B00903A9C = {
 			isa = PBXGroup;
 			children = (
@@ -162,9 +215,13 @@
 			isa = PBXGroup;
 			children = (
 				79129E961CC7D40100A173F5 /* ParserModel.swift */,
+				7922D5F91CCA8ED10008B287 /* ParserMetaCommand.swift */,
+				7922D6151CCA99F90008B287 /* ParserGeneralCommand.swift */,
+				7922D6171CCA9A590008B287 /* ParserGraphicCommand.swift */,
+				7922D6191CCA9B470008B287 /* ParserAudioCommand.swift */,
+				7922D61B1CCA9B970008B287 /* ParserFlowControlCommand.swift */,
+				7922D61D1CCA9BE30008B287 /* ParserUserInteractionCommand.swift */,
 				79182EA91CC9398200D207A2 /* ScriptStack.swift */,
-				792FB8EC1CC5393500903A9C /* Script.swift */,
-				792FB8EA1CC5391F00903A9C /* Command.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -172,7 +229,8 @@
 		792FB8EE1CC53B3000903A9C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				792FB8EF1CC53B3B00903A9C /* Extensions.swift */,
+				7922D5FB1CCA93D80008B287 /* Extensions */,
+				7922D5FC1CCA93D80008B287 /* Script */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -286,13 +344,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */,
+				7922D6141CCA985E0008B287 /* UserInteractionCommand.swift in Sources */,
+				7922D61A1CCA9B470008B287 /* ParserAudioCommand.swift in Sources */,
+				7922D61E1CCA9BE30008B287 /* ParserUserInteractionCommand.swift in Sources */,
+				7922D6121CCA97FF0008B287 /* FlowControlCommand.swift in Sources */,
+				7922D6161CCA99F90008B287 /* ParserGeneralCommand.swift in Sources */,
 				79129E9E1CC7D82200A173F5 /* ViewController.swift in Sources */,
-				792FB8ED1CC5393500903A9C /* Script.swift in Sources */,
-				792FB8F01CC53B3B00903A9C /* Extensions.swift in Sources */,
+				7922D6081CCA946D0008B287 /* CommandInitializer.swift in Sources */,
 				79182EAD1CC93C2700D207A2 /* Console.swift in Sources */,
+				7922D60C1CCA95D20008B287 /* GeneralCommand.swift in Sources */,
+				7922D6051CCA94450008B287 /* Command.swift in Sources */,
+				7922D6101CCA97970008B287 /* AudioControlCommand.swift in Sources */,
+				7922D60E1CCA96180008B287 /* GraphicControlCommand.swift in Sources */,
+				7922D6181CCA9A590008B287 /* ParserGraphicCommand.swift in Sources */,
+				7922D6061CCA94450008B287 /* Script.swift in Sources */,
+				7922D5FA1CCA8ED10008B287 /* ParserMetaCommand.swift in Sources */,
+				7922D6001CCA93ED0008B287 /* Extensions.swift in Sources */,
+				7922D6021CCA94010008B287 /* Operators.swift in Sources */,
 				79129E951CC7D3D500A173F5 /* AdventureController.swift in Sources */,
+				7922D61C1CCA9B970008B287 /* ParserFlowControlCommand.swift in Sources */,
 				79129E971CC7D40100A173F5 /* ParserModel.swift in Sources */,
-				792FB8EB1CC5391F00903A9C /* Command.swift in Sources */,
+				7922D60A1CCA95820008B287 /* MetaCommand.swift in Sources */,
 				79182EAA1CC9398200D207A2 /* ScriptStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

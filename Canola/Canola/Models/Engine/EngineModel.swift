@@ -10,13 +10,20 @@ import UIKit
 
 class EngineModel: NSObject {
 	
-	lazy var mainParser: ParserModel = {
-		let parser = ParserModel()
-		return parser
+	lazy var mainParser: ParserModel? = {
+		do {
+			let parser = try ParserModel(initialScript: "main")
+			return parser
+			
+		} catch let error {
+			Console.shared.warning(error)
+			return nil
+		}
 	}()
 	
 	private func startGame() {
-		self.mainParser.parse()
+		self.mainParser?.enableParsing()
+		self.mainParser?.parse()
 	}
 	
 	func runGame() {
