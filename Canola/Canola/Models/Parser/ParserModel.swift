@@ -10,6 +10,8 @@ import UIKit
 
 class ParserModel: NSObject {
 	
+	private let queue: dispatch_queue_t
+	
 	private var currentScript: Script
 	private var currentLine: Int
 	private var scriptStack: ScriptStack
@@ -21,6 +23,8 @@ class ParserModel: NSObject {
 	}
 	
 	init(initialScript: String) throws {
+		
+		self.queue = dispatch_queue_create(initialScript, DISPATCH_QUEUE_SERIAL)
 		
 		let script = try Script(filename: initialScript)
 		let startLine = script.getIndex(forLabel: "start") ?? 0
@@ -41,6 +45,18 @@ class ParserModel: NSObject {
 	}
 	
 	func parse() {
+		
+		GCD.runAsynchronizedQueue(at: .Static(queue: self.queue)) {
+			self.parseScript()
+		}
+		
+	}
+	
+}
+
+extension ParserModel {
+	
+	private func parseScript() {
 		
 		guard self.isParsingEnabled else {
 			return
@@ -76,7 +92,7 @@ class ParserModel: NSObject {
 				self.currentLine.increase()
 			}
 			
-			return parse()
+			return parseScript()
 			
 		} catch let error {
 			Console.shared.warning(error)
