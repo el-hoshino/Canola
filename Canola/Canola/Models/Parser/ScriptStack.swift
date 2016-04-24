@@ -12,8 +12,8 @@ extension ParserModel {
 	
 	struct ScriptStack {
 		
-		struct Element {
-			let script: String
+		private struct Element {
+			let script: Script
 			let line: Int
 		}
 		
@@ -21,6 +21,26 @@ extension ParserModel {
 		
 		static func initial() -> ScriptStack {
 			return ScriptStack(stack: [])
+		}
+		
+		mutating func append(script script: Script, line: Int) {
+			let newElement = Element(script: script, line: line)
+			self.stack.append(newElement)
+		}
+		
+		mutating func retrieveLast() throws -> (script: Script, line: Int) {
+			
+			enum Error: ErrorType {
+				case StackIsEmpty
+			}
+			
+			guard let lastStack = self.stack.last else {
+				throw Error.StackIsEmpty
+			}
+			
+			self.stack.removeLast()
+			return (lastStack.script, lastStack.line)
+			
 		}
 		
 	}

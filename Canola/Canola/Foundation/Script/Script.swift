@@ -21,6 +21,7 @@ struct Script {
 		
 	}
 	
+	private let name: String
 	private let labels: [String: Int]
 	private let lines: [Command]
 	
@@ -38,8 +39,18 @@ struct Script {
 		
 	}
 	
-	func getIndex(forLabel label: String) -> Int? {
-		return self.labels[label]
+	func getIndex(forLabel label: String) throws -> Int {
+		
+		enum Error: ErrorType {
+			case LabelNotFound(label: String)
+		}
+		
+		guard let index = self.labels[label] else {
+			throw Error.LabelNotFound(label: label)
+		}
+		
+		return index
+		
 	}
 	
 }
@@ -75,6 +86,7 @@ extension Script {
 			}
 		}
 		
+		self.name = filename
 		self.lines = lines
 		self.labels = labels
 		

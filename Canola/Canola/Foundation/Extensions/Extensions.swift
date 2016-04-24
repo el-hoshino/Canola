@@ -10,8 +10,20 @@ import Foundation
 
 extension RandomAccessIndexType {
 	
+	var increased: Self {
+		return self.advancedBy(1)
+	}
+	
 	mutating func increase() {
 		self = self.advancedBy(1)
+	}
+	
+	var decreased: Self {
+		return self.advancedBy(-1)
+	}
+	
+	mutating func decrease() {
+		self = self.advancedBy(-1)
 	}
 	
 }
