@@ -22,12 +22,16 @@ class EngineModel: NSObject {
 	}()
 	
 	private func startGame() {
-		self.mainParser?.enableParsing()
+		self.mainParser?.disableStandbying()
 		self.mainParser?.parse()
 	}
 	
 	func runGame() {
 		self.startGame()
+	}
+	
+	func enterNext(line: Int? = nil) {
+		self.mainParser?.enterNext(line)
 	}
 	
 }

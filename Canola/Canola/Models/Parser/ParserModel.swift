@@ -41,7 +41,7 @@ class ParserModel: NSObject {
 		
 	}
 	
-	func enableParsing() {
+	func disableStandbying() {
 		self.isStandBying = false
 	}
 	
@@ -56,6 +56,23 @@ class ParserModel: NSObject {
 				return
 			}
 		}
+		
+	}
+	
+	func enterNext(line: Int? = nil) {
+		
+		guard self.isStandBying else {
+			return
+		}
+		
+		if let line = line {
+			self.currentLine = line
+		} else {
+			self.currentLine.increase()
+		}
+		
+		self.disableStandbying()
+		self.parse()
 		
 	}
 	
@@ -95,7 +112,7 @@ extension ParserModel {
 			
 		case .UserInteraction(command: let command):
 			try self.parseUserInteractionCommand(command)
-			self.currentLine.increase()
+			self.isStandBying = true
 		}
 		
 		return try parseScript()
