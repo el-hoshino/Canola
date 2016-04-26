@@ -36,6 +36,11 @@ class AdventureController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
+	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+		let mask = GlobalSettings.shared.viewSettings.supportedOrientationMask
+		return mask
+	}
+	
 	func startGame() {
 		self.engine.runGame()
 	}

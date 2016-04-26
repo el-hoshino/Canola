@@ -29,6 +29,8 @@
 		797FC6381CCF9777006D2B1A /* AdventureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6351CCF9777006D2B1A /* AdventureController.swift */; };
 		797FC6391CCF9777006D2B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6371CCF9777006D2B1A /* ViewController.swift */; };
 		797FC63F1CCF992A006D2B1A /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC63E1CCF992A006D2B1A /* AdventureView.swift */; };
+		797FC6451CCF9CEE006D2B1A /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6441CCF9CEE006D2B1A /* GlobalSettings.swift */; };
+		797FC6471CCF9D5B006D2B1A /* ViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6461CCF9D5B006D2B1A /* ViewSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		797FC6351CCF9777006D2B1A /* AdventureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureController.swift; sourceTree = "<group>"; };
 		797FC6371CCF9777006D2B1A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		797FC63E1CCF992A006D2B1A /* AdventureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
+		797FC6441CCF9CEE006D2B1A /* GlobalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
+		797FC6461CCF9D5B006D2B1A /* ViewSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				7922D5FB1CCA93D80008B287 /* Extensions */,
+				797FC6431CCF9CE0006D2B1A /* GlobalSettings */,
 				7922D5FC1CCA93D80008B287 /* Script */,
 			);
 			path = Foundation;
@@ -237,6 +242,15 @@
 				797FC63E1CCF992A006D2B1A /* AdventureView.swift */,
 			);
 			path = AdventureViews;
+			sourceTree = "<group>";
+		};
+		797FC6431CCF9CE0006D2B1A /* GlobalSettings */ = {
+			isa = PBXGroup;
+			children = (
+				797FC6441CCF9CEE006D2B1A /* GlobalSettings.swift */,
+				797FC6461CCF9D5B006D2B1A /* ViewSettings.swift */,
+			);
+			path = GlobalSettings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +365,7 @@
 				79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */,
 				797FC63F1CCF992A006D2B1A /* AdventureView.swift in Sources */,
 				7922D6141CCA985E0008B287 /* UserInteractionCommand.swift in Sources */,
+				797FC6471CCF9D5B006D2B1A /* ViewSettings.swift in Sources */,
 				7922D6121CCA97FF0008B287 /* FlowControlCommand.swift in Sources */,
 				7922D6081CCA946D0008B287 /* CommandInitializer.swift in Sources */,
 				79182EAD1CC93C2700D207A2 /* Console.swift in Sources */,
@@ -360,6 +375,7 @@
 				7922D60E1CCA96180008B287 /* GraphicControlCommand.swift in Sources */,
 				7922D6061CCA94450008B287 /* Script.swift in Sources */,
 				7922D6001CCA93ED0008B287 /* Extensions.swift in Sources */,
+				797FC6451CCF9CEE006D2B1A /* GlobalSettings.swift in Sources */,
 				797FC6391CCF9777006D2B1A /* ViewController.swift in Sources */,
 				7922D6021CCA94010008B287 /* Operators.swift in Sources */,
 				7922D6201CCBD3F60008B287 /* GCD.swift in Sources */,
