@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79129E951CC7D3D500A173F5 /* AdventureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129E941CC7D3D500A173F5 /* AdventureController.swift */; };
 		79129E971CC7D40100A173F5 /* ParserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129E961CC7D40100A173F5 /* ParserModel.swift */; };
-		79129E9E1CC7D82200A173F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129E9D1CC7D82200A173F5 /* ViewController.swift */; };
 		79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129EA01CC7D91D00A173F5 /* EngineModel.swift */; };
 		79182EAA1CC9398200D207A2 /* ScriptStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79182EA91CC9398200D207A2 /* ScriptStack.swift */; };
 		79182EAD1CC93C2700D207A2 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79182EAC1CC93C2700D207A2 /* Console.swift */; };
@@ -28,6 +26,8 @@
 		792FB8921CC51E7B00903A9C /* Canola.h in Headers */ = {isa = PBXBuildFile; fileRef = 792FB8911CC51E7B00903A9C /* Canola.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		792FB8991CC51E7B00903A9C /* Canola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792FB88E1CC51E7B00903A9C /* Canola.framework */; };
 		792FB89E1CC51E7B00903A9C /* CanolaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB89D1CC51E7B00903A9C /* CanolaTests.swift */; };
+		797FC6381CCF9777006D2B1A /* AdventureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6351CCF9777006D2B1A /* AdventureController.swift */; };
+		797FC6391CCF9777006D2B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6371CCF9777006D2B1A /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		79129E941CC7D3D500A173F5 /* AdventureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureController.swift; sourceTree = "<group>"; };
 		79129E961CC7D40100A173F5 /* ParserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserModel.swift; sourceTree = "<group>"; };
-		79129E9D1CC7D82200A173F5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79129EA01CC7D91D00A173F5 /* EngineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineModel.swift; sourceTree = "<group>"; };
 		79182EA91CC9398200D207A2 /* ScriptStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptStack.swift; sourceTree = "<group>"; };
 		79182EAC1CC93C2700D207A2 /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
@@ -65,6 +63,8 @@
 		792FB8981CC51E7B00903A9C /* CanolaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanolaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		792FB89D1CC51E7B00903A9C /* CanolaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanolaTests.swift; sourceTree = "<group>"; };
 		792FB89F1CC51E7B00903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		797FC6351CCF9777006D2B1A /* AdventureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureController.swift; sourceTree = "<group>"; };
+		797FC6371CCF9777006D2B1A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,31 +86,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		79129E921CC7D39F00A173F5 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				79129E9C1CC7D80C00A173F5 /* RootController */,
-				79129E931CC7D3BA00A173F5 /* AdventureControllers */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		79129E931CC7D3BA00A173F5 /* AdventureControllers */ = {
-			isa = PBXGroup;
-			children = (
-				79129E941CC7D3D500A173F5 /* AdventureController.swift */,
-			);
-			path = AdventureControllers;
-			sourceTree = "<group>";
-		};
-		79129E9C1CC7D80C00A173F5 /* RootController */ = {
-			isa = PBXGroup;
-			children = (
-				79129E9D1CC7D82200A173F5 /* ViewController.swift */,
-			);
-			path = RootController;
-			sourceTree = "<group>";
-		};
 		79129E9F1CC7D8F900A173F5 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				792FB8EE1CC53B3000903A9C /* Foundation */,
-				79129E921CC7D39F00A173F5 /* ViewControllers */,
+				797FC6331CCF9777006D2B1A /* Controllers */,
 				792FB8E81CC538FF00903A9C /* Models */,
 				792FB8911CC51E7B00903A9C /* Canola.h */,
 				792FB8931CC51E7B00903A9C /* Info.plist */,
@@ -218,6 +193,31 @@
 				7922D5FC1CCA93D80008B287 /* Script */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		797FC6331CCF9777006D2B1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				797FC6341CCF9777006D2B1A /* AdventureControllers */,
+				797FC6361CCF9777006D2B1A /* RootController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		797FC6341CCF9777006D2B1A /* AdventureControllers */ = {
+			isa = PBXGroup;
+			children = (
+				797FC6351CCF9777006D2B1A /* AdventureController.swift */,
+			);
+			path = AdventureControllers;
+			sourceTree = "<group>";
+		};
+		797FC6361CCF9777006D2B1A /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+				797FC6371CCF9777006D2B1A /* ViewController.swift */,
+			);
+			path = RootController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,10 +328,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				797FC6381CCF9777006D2B1A /* AdventureController.swift in Sources */,
 				79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */,
 				7922D6141CCA985E0008B287 /* UserInteractionCommand.swift in Sources */,
 				7922D6121CCA97FF0008B287 /* FlowControlCommand.swift in Sources */,
-				79129E9E1CC7D82200A173F5 /* ViewController.swift in Sources */,
 				7922D6081CCA946D0008B287 /* CommandInitializer.swift in Sources */,
 				79182EAD1CC93C2700D207A2 /* Console.swift in Sources */,
 				7922D60C1CCA95D20008B287 /* GeneralCommand.swift in Sources */,
@@ -340,9 +340,9 @@
 				7922D60E1CCA96180008B287 /* GraphicControlCommand.swift in Sources */,
 				7922D6061CCA94450008B287 /* Script.swift in Sources */,
 				7922D6001CCA93ED0008B287 /* Extensions.swift in Sources */,
+				797FC6391CCF9777006D2B1A /* ViewController.swift in Sources */,
 				7922D6021CCA94010008B287 /* Operators.swift in Sources */,
 				7922D6201CCBD3F60008B287 /* GCD.swift in Sources */,
-				79129E951CC7D3D500A173F5 /* AdventureController.swift in Sources */,
 				79129E971CC7D40100A173F5 /* ParserModel.swift in Sources */,
 				7922D60A1CCA95820008B287 /* MetaCommand.swift in Sources */,
 				79182EAA1CC9398200D207A2 /* ScriptStack.swift in Sources */,
