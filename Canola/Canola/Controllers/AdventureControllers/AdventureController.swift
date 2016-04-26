@@ -18,7 +18,7 @@ class AdventureController: UIViewController {
 	private lazy var adventureView: UIView = {
 		let view = AdventureView(frame: self.view.bounds)
 		view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AdventureController.enterNext))
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AdventureController.onSingleTap))
 		view.addGestureRecognizer(tapGesture)
 		return view
 	}()
@@ -45,7 +45,7 @@ class AdventureController: UIViewController {
 		self.engine.runGame()
 	}
 	
-	func enterNext() {
+	func onSingleTap() {
 		self.engine.enterNext()
 	}
 	
