@@ -28,6 +28,7 @@
 		792FB89E1CC51E7B00903A9C /* CanolaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB89D1CC51E7B00903A9C /* CanolaTests.swift */; };
 		797FC6381CCF9777006D2B1A /* AdventureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6351CCF9777006D2B1A /* AdventureController.swift */; };
 		797FC6391CCF9777006D2B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6371CCF9777006D2B1A /* ViewController.swift */; };
+		797FC63F1CCF992A006D2B1A /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC63E1CCF992A006D2B1A /* AdventureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		792FB89F1CC51E7B00903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		797FC6351CCF9777006D2B1A /* AdventureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureController.swift; sourceTree = "<group>"; };
 		797FC6371CCF9777006D2B1A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		797FC63E1CCF992A006D2B1A /* AdventureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				792FB8EE1CC53B3000903A9C /* Foundation */,
 				797FC6331CCF9777006D2B1A /* Controllers */,
 				792FB8E81CC538FF00903A9C /* Models */,
+				797FC63A1CCF97E4006D2B1A /* Views */,
 				792FB8911CC51E7B00903A9C /* Canola.h */,
 				792FB8931CC51E7B00903A9C /* Info.plist */,
 			);
@@ -198,8 +201,8 @@
 		797FC6331CCF9777006D2B1A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				797FC6341CCF9777006D2B1A /* AdventureControllers */,
 				797FC6361CCF9777006D2B1A /* RootController */,
+				797FC6341CCF9777006D2B1A /* AdventureControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +221,22 @@
 				797FC6371CCF9777006D2B1A /* ViewController.swift */,
 			);
 			path = RootController;
+			sourceTree = "<group>";
+		};
+		797FC63A1CCF97E4006D2B1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				797FC63D1CCF992A006D2B1A /* AdventureViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		797FC63D1CCF992A006D2B1A /* AdventureViews */ = {
+			isa = PBXGroup;
+			children = (
+				797FC63E1CCF992A006D2B1A /* AdventureView.swift */,
+			);
+			path = AdventureViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +349,7 @@
 			files = (
 				797FC6381CCF9777006D2B1A /* AdventureController.swift in Sources */,
 				79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */,
+				797FC63F1CCF992A006D2B1A /* AdventureView.swift in Sources */,
 				7922D6141CCA985E0008B287 /* UserInteractionCommand.swift in Sources */,
 				7922D6121CCA97FF0008B287 /* FlowControlCommand.swift in Sources */,
 				7922D6081CCA946D0008B287 /* CommandInitializer.swift in Sources */,

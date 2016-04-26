@@ -10,13 +10,14 @@ import UIKit
 
 class AdventureController: UIViewController {
 	
-	lazy var engine: EngineModel = {
+	private lazy var engine: EngineModel = {
 		let engine = EngineModel()
 		return engine
 	}()
 	
-	lazy var interactionView: UIView = {
-		let view = UIView(frame: self.view.bounds)
+	private lazy var adventureView: UIView = {
+		let view = AdventureView(frame: self.view.bounds)
+		view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AdventureController.enterNext))
 		view.addGestureRecognizer(tapGesture)
 		return view
@@ -26,7 +27,7 @@ class AdventureController: UIViewController {
         super.viewDidLoad()
 		
         // Do any additional setup after loading the view.
-		self.view.addSubview(self.interactionView)
+		self.view.addSubview(self.adventureView)
 		self.startGame()
     }
 
