@@ -31,6 +31,7 @@
 		797FC63F1CCF992A006D2B1A /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC63E1CCF992A006D2B1A /* AdventureView.swift */; };
 		797FC6451CCF9CEE006D2B1A /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6441CCF9CEE006D2B1A /* GlobalSettings.swift */; };
 		797FC6471CCF9D5B006D2B1A /* ViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6461CCF9D5B006D2B1A /* ViewSettings.swift */; };
+		79BF49D81CCFD73A00AD7C41 /* AdventureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF49D71CCFD73A00AD7C41 /* AdventureScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		797FC63E1CCF992A006D2B1A /* AdventureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
 		797FC6441CCF9CEE006D2B1A /* GlobalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
 		797FC6461CCF9D5B006D2B1A /* ViewSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSettings.swift; sourceTree = "<group>"; };
+		79BF49D71CCFD73A00AD7C41 /* AdventureScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				797FC63E1CCF992A006D2B1A /* AdventureView.swift */,
+				79BF49D71CCFD73A00AD7C41 /* AdventureScene.swift */,
 			);
 			path = AdventureViews;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				797FC6381CCF9777006D2B1A /* AdventureController.swift in Sources */,
+				79BF49D81CCFD73A00AD7C41 /* AdventureScene.swift in Sources */,
 				79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */,
 				797FC63F1CCF992A006D2B1A /* AdventureView.swift in Sources */,
 				7922D6141CCA985E0008B287 /* UserInteractionCommand.swift in Sources */,
