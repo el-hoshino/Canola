@@ -11,7 +11,7 @@ import SpriteKit
 class AdventureView: SKView {
 	
 	private lazy var gameScene: SKScene = {
-		let scene = SKScene(size: CGSize(width: 1280, height: 720))
+		let scene = SKScene(size: GlobalSettings.shared.viewSettings.gameScreenSize)
 		scene.backgroundColor = .blueColor()
 		return scene
 	}()
