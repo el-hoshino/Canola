@@ -8,7 +8,24 @@
 
 import UIKit
 
+protocol ParserModelGraphicDelegate {
+	
+	func showScreen(within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
+	func hideScreen(within duration: NSTimeInterval, usingColor color: UIColor, waitUntilEnd shouldWait: Bool)
+	
+	func setBackground(on tag: Int, with file: String)
+	func showBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
+	func hideBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
+	
+	func setCharacter(on tag: Int, with file: String, `as` name: String?)
+	func showCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
+	func hideCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
+	
+}
+
 class ParserModel: NSObject {
+	
+	var graphicDelegate: ParserModelGraphicDelegate?
 	
 	private let queue: dispatch_queue_t
 	
@@ -155,23 +172,29 @@ extension ParserModel {
 	private func parseGraphincCommand(command: Script.Command.GraphicControlCommand) throws {
 		
 		switch command {
-		case .ShowScreen(duration: _, waitUntilEnd: _):
-			break
+		case .ShowScreen(duration: let duration, waitUntilEnd: let shouldWait):
+			self.graphicDelegate?.showScreen(within: duration, waitUntilEnd: shouldWait)
 			
-		case .HideScreen(duration: _, color: _, waitUntilEnd: _):
-			break
+		case .HideScreen(duration: let duration, color: let color, waitUntilEnd: let shouldWait):
+			self.graphicDelegate?.hideScreen(within: duration, usingColor: color, waitUntilEnd: shouldWait)
 			
-		case .ShowBG(file: _, tag: _, duration: _, waitUntilEnd: _):
-			break
+		case .SetBG(tag: let tag, file: let file):
+			self.graphicDelegate?.setBackground(on: tag, with: file)
 			
-		case .HideBG(tag: _, duration: _, waitUntilEnd: _):
-			break
+		case .ShowBG(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
+			self.graphicDelegate?.showBackground(on: tag, within: duration, waitUntilEnd: shouldWait)
 			
-		case .ShowCHA(file: _, tag: _, characterName: _, duration: _, waitUntilEnd: _):
-			break
+		case .HideBG(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
+			self.graphicDelegate?.hideBackground(on: tag, within: duration, waitUntilEnd: shouldWait)
 			
-		case .HideCHA(tag: _, duration: _, waitUntilEnd: _):
-			break
+		case .SetCHA(tag: let tag, file: let file, characterName: let name):
+			self.graphicDelegate?.setCharacter(on: tag, with: file, `as`: name)
+			
+		case .ShowCHA(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
+			self.graphicDelegate?.showCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
+			
+		case .HideCHA(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
+			self.graphicDelegate?.hideCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
 		}
 		
 	}

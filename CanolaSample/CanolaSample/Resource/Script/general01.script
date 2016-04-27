@@ -2,8 +2,12 @@
 
 .HideScreen	time: 0,	color: 0x000000
 
-.ShowBG		BG001,		tag: 1,		time: 0
-.ShowCHA	CHA001,		tag: 1,		time: 0,	name: Canola
+.SetBG		tag: 1,		file: BG001
+.SetCHA		tag: 1,		file: CHA001	name: Canola
+
+.ShowBG		tag: 1,		time: 0
+.ShowCHA	tag: 1,		time: 0
+
 .ShowScreen	time: 0.5,	wait: true
 
 .Message	speaker: Canola, voice: VOC001, 初めまして

@@ -18,6 +18,10 @@
 		792FB8D51CC51EB200903A9C /* CanolaSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FB8D41CC51EB200903A9C /* CanolaSampleUITests.swift */; };
 		792FB8E51CC521DE00903A9C /* main.script in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8E41CC521DE00903A9C /* main.script */; };
 		792FB8E71CC522DD00903A9C /* general01.script in Resources */ = {isa = PBXBuildFile; fileRef = 792FB8E61CC522DD00903A9C /* general01.script */; };
+		796AE76B1CD111CC00DDC8C2 /* BG001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796AE7691CD111CC00DDC8C2 /* BG001.jpg */; };
+		796AE76C1CD111CC00DDC8C2 /* BG002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796AE76A1CD111CC00DDC8C2 /* BG002.jpg */; };
+		796AE7701CD1208D00DDC8C2 /* CHA001.png in Resources */ = {isa = PBXBuildFile; fileRef = 796AE76E1CD1208D00DDC8C2 /* CHA001.png */; };
+		796AE7711CD1208D00DDC8C2 /* CHA002.png in Resources */ = {isa = PBXBuildFile; fileRef = 796AE76F1CD1208D00DDC8C2 /* CHA002.png */; };
 		797FC6421CCF9BD4006D2B1A /* Settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 797FC6411CCF9BD4006D2B1A /* Settings.json */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		792FB8D61CC51EB200903A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		792FB8E41CC521DE00903A9C /* main.script */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.script; sourceTree = "<group>"; };
 		792FB8E61CC522DD00903A9C /* general01.script */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = general01.script; sourceTree = "<group>"; };
+		796AE7691CD111CC00DDC8C2 /* BG001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BG001.jpg; sourceTree = "<group>"; };
+		796AE76A1CD111CC00DDC8C2 /* BG002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BG002.jpg; sourceTree = "<group>"; };
+		796AE76E1CD1208D00DDC8C2 /* CHA001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CHA001.png; sourceTree = "<group>"; };
+		796AE76F1CD1208D00DDC8C2 /* CHA002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CHA002.png; sourceTree = "<group>"; };
 		797FC6411CCF9BD4006D2B1A /* Settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Settings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +164,7 @@
 			children = (
 				797FC6401CCF9BB8006D2B1A /* Settings */,
 				792FB8E31CC521C100903A9C /* Script */,
+				796AE7671CD111CC00DDC8C2 /* Images */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -167,6 +176,33 @@
 				792FB8E61CC522DD00903A9C /* general01.script */,
 			);
 			path = Script;
+			sourceTree = "<group>";
+		};
+		796AE7671CD111CC00DDC8C2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				796AE7681CD111CC00DDC8C2 /* BG */,
+				796AE76D1CD1208D00DDC8C2 /* CHA */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		796AE7681CD111CC00DDC8C2 /* BG */ = {
+			isa = PBXGroup;
+			children = (
+				796AE7691CD111CC00DDC8C2 /* BG001.jpg */,
+				796AE76A1CD111CC00DDC8C2 /* BG002.jpg */,
+			);
+			path = BG;
+			sourceTree = "<group>";
+		};
+		796AE76D1CD1208D00DDC8C2 /* CHA */ = {
+			isa = PBXGroup;
+			children = (
+				796AE76E1CD1208D00DDC8C2 /* CHA001.png */,
+				796AE76F1CD1208D00DDC8C2 /* CHA002.png */,
+			);
+			path = CHA;
 			sourceTree = "<group>";
 		};
 		797FC6401CCF9BB8006D2B1A /* Settings */ = {
@@ -285,9 +321,13 @@
 				792FB8E71CC522DD00903A9C /* general01.script in Resources */,
 				792FB8BF1CC51EB200903A9C /* LaunchScreen.storyboard in Resources */,
 				797FC6421CCF9BD4006D2B1A /* Settings.json in Resources */,
+				796AE76C1CD111CC00DDC8C2 /* BG002.jpg in Resources */,
 				792FB8BC1CC51EB200903A9C /* Assets.xcassets in Resources */,
+				796AE76B1CD111CC00DDC8C2 /* BG001.jpg in Resources */,
 				792FB8BA1CC51EB200903A9C /* Main.storyboard in Resources */,
 				792FB8E51CC521DE00903A9C /* main.script in Resources */,
+				796AE7701CD1208D00DDC8C2 /* CHA001.png in Resources */,
+				796AE7711CD1208D00DDC8C2 /* CHA002.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
