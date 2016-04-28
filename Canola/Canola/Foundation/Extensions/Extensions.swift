@@ -28,6 +28,14 @@ extension RandomAccessIndexType {
 	
 }
 
+extension CollectionType {
+	
+	var indexRange: Range<Self.Index> {
+		return self.startIndex ..< self.endIndex
+	}
+	
+}
+
 extension String {
 	
 	var trimmed: String {

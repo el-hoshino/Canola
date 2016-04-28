@@ -50,9 +50,13 @@ struct GCD {
 		
 	}
 
+}
+
+extension GCD { // MARK: Queues
+	
 	static func runSynchronizedQueue(at thread: Thread = .Main, with action: (() -> Void)) {
 		
-		dispatch_sync(thread.queue) { 
+		dispatch_sync(thread.queue) {
 			action()
 		}
 		
@@ -74,6 +78,39 @@ struct GCD {
 			}
 		}
 		
+	}
+	
+}
+
+extension GCD { // MARK: Semaphores
+	
+	enum DispatchTime {
+		case Forever
+		case TimeAfter(delta: NSTimeInterval)
+		
+		var dispatchTimeType: dispatch_time_t {
+			switch self {
+			case .Forever:
+				return DISPATCH_TIME_FOREVER
+				
+			case .TimeAfter(delta: let delta):
+				let nanoseconds = Int64(delta * NSTimeInterval(NSEC_PER_SEC))
+				let time = dispatch_time(DISPATCH_TIME_NOW, nanoseconds)
+				return time
+			}
+		}
+	}
+	
+	static func createSemaphore(value: Int) -> dispatch_semaphore_t {
+		return dispatch_semaphore_create(value)
+	}
+	
+	static func fireSemaphore(semaphore: dispatch_semaphore_t) {
+		dispatch_semaphore_signal(semaphore)
+	}
+	
+	static func waitForSemaphore(semaphore: dispatch_semaphore_t, until deadLine: DispatchTime = .Forever) {
+		dispatch_semaphore_wait(semaphore, deadLine.dispatchTimeType)
 	}
 	
 }
