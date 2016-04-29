@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 extension RandomAccessIndexType {
 	
@@ -72,6 +73,19 @@ extension Dictionary {
 		var dictionary = self
 		dictionary[key] = value
 		return dictionary
+	}
+	
+}
+
+extension SKSpriteNode {
+	
+	convenience init(referenceNode: SKSpriteNode) {
+		self.init(texture: referenceNode.texture)
+		self.anchorPoint = referenceNode.anchorPoint
+		self.size = referenceNode.size
+		self.position = referenceNode.position
+		self.zPosition = referenceNode.zPosition
+		self.alpha = referenceNode.alpha
 	}
 	
 }

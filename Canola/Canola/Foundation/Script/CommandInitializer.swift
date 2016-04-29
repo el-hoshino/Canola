@@ -176,9 +176,26 @@ extension Script.Command {
 			let graphicCommand = GraphicControlCommand.HideScreen(duration: time, color: color, waitUntilEnd: wait)
 			self = .GraphicControl(command: graphicCommand)
 			
+		case ".InitBG":
+			var bgTag = 0
+			command.parameters.forEach({ (parameter) in
+				if let name = parameter.name {
+					switch name {
+					case "tag":
+						bgTag =? Int(parameter.value)
+						
+					default:
+						break
+					}
+				}
+			})
+			let graphicCommand = GraphicControlCommand.InitBG(tag: bgTag)
+			self = .GraphicControl(command: graphicCommand)
+			
 		case ".SetBG":
 			var bgFile: String?
 			var bgTag = 0
+			var time: NSTimeInterval = 0
 			command.parameters.forEach({ (parameter) in
 				if let name = parameter.name {
 					switch name {
@@ -188,6 +205,9 @@ extension Script.Command {
 					case "file":
 						bgFile = parameter.value
 						
+					case "time":
+						time =? NSTimeInterval(parameter.value)
+						
 					default:
 						break
 					}
@@ -196,7 +216,7 @@ extension Script.Command {
 			guard let file = bgFile else {
 				throw InitError.NonOptionalParameterMissing(command: commandString)
 			}
-			let graphicCommand = GraphicControlCommand.SetBG(tag: bgTag, file: file)
+			let graphicCommand = GraphicControlCommand.SetBG(tag: bgTag, file: file, duration: time)
 			self = .GraphicControl(command: graphicCommand)
 			
 		case ".ShowBG":
@@ -249,9 +269,26 @@ extension Script.Command {
 			let graphicCommand = GraphicControlCommand.HideBG(tag: bgTag, duration: time, waitUntilEnd: wait)
 			self = .GraphicControl(command: graphicCommand)
 			
+		case ".InitCHA":
+			var chaTag = 0
+			command.parameters.forEach({ (parameter) in
+				if let name = parameter.name {
+					switch name {
+					case "tag":
+						chaTag =? Int(parameter.value)
+						
+					default:
+						break
+					}
+				}
+			})
+			let graphicCommand = GraphicControlCommand.InitCHA(tag: chaTag)
+			self = .GraphicControl(command: graphicCommand)
+			
 		case ".SetCHA":
 			var chaFile: String?
 			var chaTag = 0
+			var time: NSTimeInterval = 0
 			var chaName: String?
 			command.parameters.forEach({ (parameter) in
 				if let name = parameter.name {
@@ -261,6 +298,9 @@ extension Script.Command {
 						
 					case "file":
 						chaFile = parameter.value
+						
+					case "time":
+						time =? NSTimeInterval(parameter.value)
 						
 					case "name":
 						chaName = parameter.value
@@ -273,7 +313,7 @@ extension Script.Command {
 			guard let file = chaFile else {
 				throw InitError.NonOptionalParameterMissing(command: commandString)
 			}
-			let graphicCommand = GraphicControlCommand.SetCHA(tag: chaTag, file: file, characterName: chaName)
+			let graphicCommand = GraphicControlCommand.SetCHA(tag: chaTag, file: file, duration: time, characterName: chaName)
 			self = .GraphicControl(command: graphicCommand)
 			
 		case ".ShowCHA":

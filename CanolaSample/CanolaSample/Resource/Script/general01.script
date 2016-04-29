@@ -2,6 +2,9 @@
 
 .HideScreen	time: 0,	color: 0x000000
 
+.InitBG		tag: 1
+.InitCHA	tag: 1
+
 .SetBG		tag: 1,		file: BG001
 .SetCHA		tag: 1,		file: CHA001,	name: Canola
 
@@ -14,7 +17,7 @@
 
 @Canola:	Canolaエンジンへようこそ
 
-.ShowCHA	tag:1,		time: 0.5,	name: Canola
+.SetCHA		tag:1,		file: CHA002,	time: 5
 
 @Canola:	voice: VOC002, これはCanolaエンジンを使ったADVゲームのサンプルです
 .Message	話者なしのメッセージはこんな感じです

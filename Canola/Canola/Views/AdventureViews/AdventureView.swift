@@ -35,52 +35,36 @@ extension AdventureView: ParserModelGraphicDelegate {
 		self.gameScene.hideScreen(within: duration, usingColor: color, waitUntilEnd: shouldWait)
 	}
 	
-	func setBackground(on tag: Int, with file: String) {
-		do {
-			try self.gameScene.setBackground(on: tag, with: file)
-		} catch let error {
-			Console.shared.warning(error)
-		}
+	func initializeBackground(on tag: Int) throws {
+		try self.gameScene.initializeBackground(on: tag)
 	}
 	
-	func showBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
-		do {
-			try self.gameScene.fadeBackground(on: tag, to: 1, within: duration, waitUntilEnd: shouldWait)
-		} catch let error {
-			Console.shared.warning(error)
-		}
+	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval) throws {
+		try self.gameScene.setBackground(on: tag, with: file, within: duration)
 	}
 	
-	func hideBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
-		do {
-			try self.gameScene.fadeBackground(on: tag, to: 0, within: duration, waitUntilEnd: shouldWait)
-		} catch let error {
-			Console.shared.warning(error)
-		}
+	func showBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
+		try self.gameScene.fadeBackground(on: tag, to: 1, within: duration, waitUntilEnd: shouldWait)
 	}
 	
-	func setCharacter(on tag: Int, with file: String, `as` name: String?) {
-		do {
-			try self.gameScene.setCharacter(on: tag, with: file, as: name)
-		} catch let error {
-			Console.shared.warning(error)
-		}
+	func hideBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
+		try self.gameScene.fadeBackground(on: tag, to: 0, within: duration, waitUntilEnd: shouldWait)
 	}
 	
-	func showCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
-		do {
-			try self.gameScene.fadeCharacter(on: tag, to: 1, within: duration, waitUntilEnd: shouldWait)
-		} catch let error {
-			Console.shared.warning(error)
-		}
+	func initializeCharacter(on tag: Int) throws {
+		try self.gameScene.initializeCharacter(on: tag)
 	}
 	
-	func hideCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
-		do {
-			try self.gameScene.fadeCharacter(on: tag, to: 0, within: duration, waitUntilEnd: shouldWait)
-		} catch let error {
-			Console.shared.warning(error)
-		}
+	func setCharacter(on tag: Int, with file: String, within duration: NSTimeInterval, `as` name: String?) throws {
+		try self.gameScene.setCharacter(on: tag, with: file, within: duration, as: name)
+	}
+	
+	func showCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
+		try self.gameScene.fadeCharacter(on: tag, to: 1, within: duration, waitUntilEnd: shouldWait)
+	}
+	
+	func hideCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
+		try self.gameScene.fadeCharacter(on: tag, to: 0, within: duration, waitUntilEnd: shouldWait)
 	}
 	
 }

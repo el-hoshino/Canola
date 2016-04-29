@@ -13,13 +13,15 @@ protocol ParserModelGraphicDelegate {
 	func showScreen(within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
 	func hideScreen(within duration: NSTimeInterval, usingColor color: UIColor, waitUntilEnd shouldWait: Bool)
 	
-	func setBackground(on tag: Int, with file: String)
-	func showBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
-	func hideBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
+	func initializeBackground(on tag: Int) throws
+	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval) throws
+	func showBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
+	func hideBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
 	
-	func setCharacter(on tag: Int, with file: String, `as` name: String?)
-	func showCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
-	func hideCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool)
+	func initializeCharacter(on tag: Int) throws
+	func setCharacter(on tag: Int, with file: String, within duration: NSTimeInterval, `as` name: String?) throws
+	func showCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
+	func hideCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
 	
 }
 
@@ -109,11 +111,11 @@ extension ParserModel {
 		
 		switch command {
 		case .Meta(command: let command):
-			try self.parseMetaCommand(command)
+			self.parseMetaCommand(command)
 			self.currentLine.increase()
 			
 		case .General(command: let command):
-			try self.parseGeneralCommand(command)
+			self.parseGeneralCommand(command)
 			self.currentLine.increase()
 			
 		case .GraphicControl(command: let command):
@@ -121,18 +123,18 @@ extension ParserModel {
 			self.currentLine.increase()
 			
 		case .AudioControl(command: let command):
-			try self.parseAudioCommand(command)
+			self.parseAudioCommand(command)
 			self.currentLine.increase()
 			
 		case .FlowControl(command: let command):
 			try self.parseFlowControlCommand(command)
 			
 		case .UserInteraction(command: let command):
-			try self.parseUserInteractionCommand(command)
+			self.parseUserInteractionCommand(command)
 			self.isStandBying = true
 		}
 		
-		return try parseScript()
+		return try self.parseScript()
 		
 	}
 	
@@ -141,7 +143,7 @@ extension ParserModel {
 // MARK: MetaCommand
 extension ParserModel {
 	
-	private func parseMetaCommand(command: Script.Command.MetaCommand) throws {
+	private func parseMetaCommand(command: Script.Command.MetaCommand) {
 		
 		switch command {
 		case .Label:
@@ -155,7 +157,7 @@ extension ParserModel {
 // MARK: GeneralCommand
 extension ParserModel {
 	
-	private func parseGeneralCommand(command: Script.Command.GeneralCommand) throws {
+	private func parseGeneralCommand(command: Script.Command.GeneralCommand) {
 		
 		switch command {
 		case .Init:
@@ -178,23 +180,29 @@ extension ParserModel {
 		case .HideScreen(duration: let duration, color: let color, waitUntilEnd: let shouldWait):
 			self.graphicDelegate?.hideScreen(within: duration, usingColor: color, waitUntilEnd: shouldWait)
 			
-		case .SetBG(tag: let tag, file: let file):
-			self.graphicDelegate?.setBackground(on: tag, with: file)
+		case .InitBG(tag: let tag):
+			try self.graphicDelegate?.initializeBackground(on: tag)
+			
+		case .SetBG(tag: let tag, file: let file, duration: let duration):
+			try self.graphicDelegate?.setBackground(on: tag, with: file, within: duration)
 			
 		case .ShowBG(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
-			self.graphicDelegate?.showBackground(on: tag, within: duration, waitUntilEnd: shouldWait)
+			try self.graphicDelegate?.showBackground(on: tag, within: duration, waitUntilEnd: shouldWait)
 			
 		case .HideBG(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
-			self.graphicDelegate?.hideBackground(on: tag, within: duration, waitUntilEnd: shouldWait)
+			try self.graphicDelegate?.hideBackground(on: tag, within: duration, waitUntilEnd: shouldWait)
 			
-		case .SetCHA(tag: let tag, file: let file, characterName: let name):
-			self.graphicDelegate?.setCharacter(on: tag, with: file, `as`: name)
+		case .InitCHA(tag: let tag):
+			try self.graphicDelegate?.initializeCharacter(on: tag)
+			
+		case .SetCHA(tag: let tag, file: let file, duration: let duration, characterName: let name):
+			try self.graphicDelegate?.setCharacter(on: tag, with: file, within: duration, as: name)
 			
 		case .ShowCHA(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
-			self.graphicDelegate?.showCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
+			try self.graphicDelegate?.showCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
 			
 		case .HideCHA(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
-			self.graphicDelegate?.hideCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
+			try self.graphicDelegate?.hideCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
 		}
 		
 	}
@@ -204,7 +212,7 @@ extension ParserModel {
 // MARK: AudioControlCommand
 extension ParserModel {
 	
-	private func parseAudioCommand(command: Script.Command.AudioControlCommand) throws {
+	private func parseAudioCommand(command: Script.Command.AudioControlCommand) {
 		
 		switch command {
 		case .PlayBGM(file: _, channel: _):
@@ -280,7 +288,7 @@ extension ParserModel {
 // MARK: UserInteractionControl
 extension ParserModel {
 	
-	private func parseUserInteractionCommand(command: Script.Command.UserInteractionCommand) throws {
+	private func parseUserInteractionCommand(command: Script.Command.UserInteractionCommand) {
 		
 		switch command {
 		case .Message(speaker: _, voice: _, message: _):

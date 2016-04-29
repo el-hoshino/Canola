@@ -65,6 +65,63 @@ class AdventureScene: SKScene {
 		
 	}
 	
+	private func initializeNode(node: SKSpriteNode) {
+		
+		node.alpha = 0
+		node.texture = nil
+		node.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+		node.size = .zero
+		
+	}
+	
+	private func switchNode(node: SKSpriteNode, to texture: SKTexture, within duration: NSTimeInterval) {
+		
+		//TODO: Use shader to make a disslove effect
+		if duration > 0 {
+			let tempNode = SKSpriteNode(referenceNode: node)
+			self.addChild(tempNode)
+			node.alpha = 0
+			node.texture = texture
+			node.size = texture.size()
+
+			let fadeoutAction = SKAction.fadeAlphaTo(0, duration: duration)
+			let fadeinAction = SKAction.fadeAlphaTo(1, duration: duration)
+			let action = SKAction.runBlock({
+				node.runAction(fadeinAction)
+				tempNode.runAction(fadeoutAction, completion: { 
+					tempNode.removeFromParent()
+				})
+			})
+			self.runAction(action)
+
+		} else {
+			node.texture = texture
+			node.size = texture.size()
+		}
+		
+	}
+	
+	private func fadeNode(node: SKSpriteNode, to alpha: CGFloat, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
+		
+		let action = SKAction.fadeAlphaTo(alpha, duration: duration)
+		
+		if shouldWait {
+			let semaphore = GCD.createSemaphore(0)
+			GCD.runAsynchronizedQueue(with: {
+				node.runAction(action, completion: {
+					GCD.fireSemaphore(semaphore)
+				})
+			})
+			GCD.waitForSemaphore(semaphore)
+			
+		} else {
+			GCD.runAsynchronizedQueue(with: {
+				node.runAction(action)
+			})
+		}
+		
+	}
+	
 	func showScreen(within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
 		
 		let action = SKAction.fadeAlphaTo(0, duration: duration)
@@ -108,7 +165,18 @@ class AdventureScene: SKScene {
 		
 	}
 	
-	func setBackground(on tag: Int, with file: String) throws {
+	func initializeBackground(on tag: Int) throws {
+		
+		guard tag …= self.backgrounds.indexRange else {
+			throw Error.TagIDInvalid(tag: tag, nodeType: .Background)
+		}
+		
+		let background = self.backgrounds[tag]
+		self.initializeNode(background)
+		
+	}
+	
+	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval) throws {
 		
 		guard tag …= self.backgrounds.indexRange else {
 			throw Error.TagIDInvalid(tag: tag, nodeType: .Background)
@@ -120,8 +188,7 @@ class AdventureScene: SKScene {
 		
 		let background = self.backgrounds[tag]
 		let texture = SKTexture(image: image)
-		background.texture = texture
-		background.size = texture.size()
+		self.switchNode(background, to: texture, within: duration)
 		
 	}
 	
@@ -132,25 +199,22 @@ class AdventureScene: SKScene {
 		}
 		
 		let background = self.backgrounds[tag]
-		let action = SKAction.fadeAlphaTo(alpha, duration: duration)
-		if shouldWait {
-			let semaphore = GCD.createSemaphore(0)
-			GCD.runAsynchronizedQueue(with: { 
-				background.runAction(action, completion: { 
-					GCD.fireSemaphore(semaphore)
-				})
-			})
-			GCD.waitForSemaphore(semaphore)
-			
-		} else {
-			GCD.runAsynchronizedQueue(with: { 
-				background.runAction(action)
-			})
-		}
+		self.fadeNode(background, to: alpha, within: duration, waitUntilEnd: shouldWait)
 		
 	}
 	
-	func setCharacter(on tag: Int, with file: String, `as` name: String?) throws {
+	func initializeCharacter(on tag: Int) throws {
+		
+		guard tag …= self.characters.indexRange else {
+			throw Error.TagIDInvalid(tag: tag, nodeType: .Background)
+		}
+		
+		let character = self.characters[tag]
+		self.initializeNode(character)
+		
+	}
+	
+	func setCharacter(on tag: Int, with file: String, within duration: NSTimeInterval, `as` name: String?) throws {
 		
 		guard tag …= self.characters.indexRange else {
 			throw Error.TagIDInvalid(tag: tag, nodeType: .Character)
@@ -162,8 +226,7 @@ class AdventureScene: SKScene {
 		
 		let character = self.characters[tag]
 		let texture = SKTexture(image: image)
-		character.texture = texture
-		character.size = texture.size()
+		self.switchNode(character, to: texture, within: duration)
 		
 	}
 	
@@ -174,21 +237,7 @@ class AdventureScene: SKScene {
 		}
 		
 		let character = self.characters[tag]
-		let action = SKAction.fadeAlphaTo(alpha, duration: duration)
-		if shouldWait {
-			let semaphore = GCD.createSemaphore(0)
-			GCD.runAsynchronizedQueue(with: {
-				character.runAction(action, completion: {
-					GCD.fireSemaphore(semaphore)
-				})
-			})
-			GCD.waitForSemaphore(semaphore)
-			
-		} else {
-			GCD.runAsynchronizedQueue(with: {
-				character.runAction(action)
-			})
-		}
+		self.fadeNode(character, to: alpha, within: duration, waitUntilEnd: shouldWait)
 		
 	}
 	
