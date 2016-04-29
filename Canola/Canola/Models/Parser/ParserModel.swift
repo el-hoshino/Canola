@@ -110,8 +110,7 @@ extension ParserModel {
 		Console.shared.info(command)
 		
 		switch command {
-		case .Meta(command: let command):
-			self.parseMetaCommand(command)
+		case .Meta:
 			self.currentLine.increase()
 			
 		case .General(command: let command):
@@ -135,20 +134,6 @@ extension ParserModel {
 		}
 		
 		return try self.parseScript()
-		
-	}
-	
-}
-
-// MARK: MetaCommand
-extension ParserModel {
-	
-	private func parseMetaCommand(command: Script.Command.MetaCommand) {
-		
-		switch command {
-		case .Label:
-			break
-		}
 		
 	}
 	
