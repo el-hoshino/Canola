@@ -52,36 +52,6 @@ struct GCD {
 
 }
 
-extension GCD { // MARK: Queues
-	
-	static func runSynchronizedQueue(at thread: Thread = .Main, with action: (() -> Void)) {
-		
-		dispatch_sync(thread.queue) {
-			action()
-		}
-		
-	}
-	
-	static func runAsynchronizedQueue(at thread: Thread = .Main, waitUntilStart: Bool = false, with action: (() -> Void)) {
-		
-		if waitUntilStart {
-			let semaphore = dispatch_semaphore_create(thread.queue.hash)
-			dispatch_async(thread.queue, {
-				dispatch_semaphore_signal(semaphore)
-				action()
-			})
-			dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-			
-		} else {
-			dispatch_async(thread.queue) {
-				action()
-			}
-		}
-		
-	}
-	
-}
-
 extension GCD { // MARK: Semaphores
 	
 	enum DispatchTime {
@@ -111,6 +81,36 @@ extension GCD { // MARK: Semaphores
 	
 	static func waitForSemaphore(semaphore: dispatch_semaphore_t, until deadLine: DispatchTime = .Forever) {
 		dispatch_semaphore_wait(semaphore, deadLine.dispatchTimeType)
+	}
+	
+}
+
+extension GCD { // MARK: Queues
+	
+	static func runSynchronizedQueue(at thread: Thread = .Main, with action: (() -> Void)) {
+		
+		dispatch_sync(thread.queue) {
+			action()
+		}
+		
+	}
+	
+	static func runAsynchronizedQueue(at thread: Thread = .Main, waitUntilStartForMax waitTime: NSTimeInterval? = nil, with action: (() -> Void)) {
+		
+		if let waitTime = waitTime {
+			let semaphore = GCD.createSemaphore(thread.queue.hash)
+			dispatch_async(thread.queue, {
+				GCD.fireSemaphore(semaphore)
+				action()
+			})
+			GCD.waitForSemaphore(semaphore, until: waitTime == 0 || waitTime == .infinity ? .Forever : .TimeAfter(delta: waitTime))
+			
+		} else {
+			dispatch_async(thread.queue) {
+				action()
+			}
+		}
+		
 	}
 	
 }
