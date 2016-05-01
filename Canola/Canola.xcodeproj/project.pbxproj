@@ -11,7 +11,7 @@
 		79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79129EA01CC7D91D00A173F5 /* EngineModel.swift */; };
 		79182EAA1CC9398200D207A2 /* ScriptStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79182EA91CC9398200D207A2 /* ScriptStack.swift */; };
 		79182EAD1CC93C2700D207A2 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79182EAC1CC93C2700D207A2 /* Console.swift */; };
-		7922D6001CCA93ED0008B287 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D5FF1CCA93ED0008B287 /* Extensions.swift */; };
+		7922D6001CCA93ED0008B287 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D5FF1CCA93ED0008B287 /* FoundationExtensions.swift */; };
 		7922D6021CCA94010008B287 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6011CCA94010008B287 /* Operators.swift */; };
 		7922D6051CCA94450008B287 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6031CCA94450008B287 /* Command.swift */; };
 		7922D6061CCA94450008B287 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D6041CCA94450008B287 /* Script.swift */; };
@@ -32,6 +32,8 @@
 		797FC6451CCF9CEE006D2B1A /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6441CCF9CEE006D2B1A /* GlobalSettings.swift */; };
 		797FC6471CCF9D5B006D2B1A /* ViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FC6461CCF9D5B006D2B1A /* ViewSettings.swift */; };
 		79BF49D81CCFD73A00AD7C41 /* AdventureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF49D71CCFD73A00AD7C41 /* AdventureScene.swift */; };
+		79E3B5F81CD676F80034B0E5 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3B5F71CD676F80034B0E5 /* UIKitExtensions.swift */; };
+		79E3B5FA1CD677090034B0E5 /* SpriteKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3B5F91CD677090034B0E5 /* SpriteKitExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,7 @@
 		79129EA01CC7D91D00A173F5 /* EngineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineModel.swift; sourceTree = "<group>"; };
 		79182EA91CC9398200D207A2 /* ScriptStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptStack.swift; sourceTree = "<group>"; };
 		79182EAC1CC93C2700D207A2 /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
-		7922D5FF1CCA93ED0008B287 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7922D5FF1CCA93ED0008B287 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		7922D6011CCA94010008B287 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		7922D6031CCA94450008B287 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		7922D6041CCA94450008B287 /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		797FC6441CCF9CEE006D2B1A /* GlobalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
 		797FC6461CCF9D5B006D2B1A /* ViewSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSettings.swift; sourceTree = "<group>"; };
 		79BF49D71CCFD73A00AD7C41 /* AdventureScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureScene.swift; sourceTree = "<group>"; };
+		79E3B5F71CD676F80034B0E5 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		79E3B5F91CD677090034B0E5 /* SpriteKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +117,9 @@
 		7922D5FB1CCA93D80008B287 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7922D5FF1CCA93ED0008B287 /* Extensions.swift */,
+				7922D5FF1CCA93ED0008B287 /* FoundationExtensions.swift */,
+				79E3B5F71CD676F80034B0E5 /* UIKitExtensions.swift */,
+				79E3B5F91CD677090034B0E5 /* SpriteKitExtensions.swift */,
 				7922D6011CCA94010008B287 /* Operators.swift */,
 				7922D61F1CCBD3F60008B287 /* GCD.swift */,
 			);
@@ -367,6 +373,7 @@
 				797FC6381CCF9777006D2B1A /* AdventureController.swift in Sources */,
 				79BF49D81CCFD73A00AD7C41 /* AdventureScene.swift in Sources */,
 				79129EA11CC7D91D00A173F5 /* EngineModel.swift in Sources */,
+				79E3B5FA1CD677090034B0E5 /* SpriteKitExtensions.swift in Sources */,
 				797FC63F1CCF992A006D2B1A /* AdventureView.swift in Sources */,
 				7922D6141CCA985E0008B287 /* UserInteractionCommand.swift in Sources */,
 				797FC6471CCF9D5B006D2B1A /* ViewSettings.swift in Sources */,
@@ -375,10 +382,11 @@
 				79182EAD1CC93C2700D207A2 /* Console.swift in Sources */,
 				7922D60C1CCA95D20008B287 /* GeneralCommand.swift in Sources */,
 				7922D6051CCA94450008B287 /* Command.swift in Sources */,
+				79E3B5F81CD676F80034B0E5 /* UIKitExtensions.swift in Sources */,
 				7922D6101CCA97970008B287 /* AudioControlCommand.swift in Sources */,
 				7922D60E1CCA96180008B287 /* GraphicControlCommand.swift in Sources */,
 				7922D6061CCA94450008B287 /* Script.swift in Sources */,
-				7922D6001CCA93ED0008B287 /* Extensions.swift in Sources */,
+				7922D6001CCA93ED0008B287 /* FoundationExtensions.swift in Sources */,
 				797FC6451CCF9CEE006D2B1A /* GlobalSettings.swift in Sources */,
 				797FC6391CCF9777006D2B1A /* ViewController.swift in Sources */,
 				7922D6021CCA94010008B287 /* Operators.swift in Sources */,
