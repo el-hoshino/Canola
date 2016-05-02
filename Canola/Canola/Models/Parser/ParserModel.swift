@@ -14,20 +14,30 @@ protocol ParserModelGraphicDelegate {
 	func hideScreen(within duration: NSTimeInterval, usingColor color: UIColor, waitUntilEnd shouldWait: Bool)
 	
 	func initializeBackground(on tag: Int) throws
-	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval) throws
+	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
 	func showBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
 	func hideBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
 	
 	func initializeCharacter(on tag: Int) throws
-	func setCharacter(on tag: Int, with file: String, within duration: NSTimeInterval, `as` name: String?) throws
+	func setCharacter(on tag: Int, with file: String, `as` name: String?, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
 	func showCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
 	func hideCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws
+	
+	func hideMessageWindow()
+	
+}
+
+protocol ParserModelUserInteractionDelegate {
+	
+	func setMessage(message: String)
+	func clearMessage()
 	
 }
 
 class ParserModel: NSObject {
 	
 	var graphicDelegate: ParserModelGraphicDelegate?
+	var userInteractionDelegate: ParserModelUserInteractionDelegate?
 	
 	private let queue: dispatch_queue_t
 	
@@ -130,7 +140,7 @@ extension ParserModel {
 			
 		case .UserInteraction(command: let command):
 			self.parseUserInteractionCommand(command)
-			self.isStandBying = true
+			self.currentLine.increase()
 		}
 		
 		return try self.parseScript()
@@ -168,8 +178,8 @@ extension ParserModel {
 		case .InitBG(tag: let tag):
 			try self.graphicDelegate?.initializeBackground(on: tag)
 			
-		case .SetBG(tag: let tag, file: let file, duration: let duration):
-			try self.graphicDelegate?.setBackground(on: tag, with: file, within: duration)
+		case .SetBG(tag: let tag, file: let file, duration: let duration, waitUntilEnd: let wait):
+			try self.graphicDelegate?.setBackground(on: tag, with: file, within: duration, waitUntilEnd: wait)
 			
 		case .ShowBG(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
 			try self.graphicDelegate?.showBackground(on: tag, within: duration, waitUntilEnd: shouldWait)
@@ -180,14 +190,17 @@ extension ParserModel {
 		case .InitCHA(tag: let tag):
 			try self.graphicDelegate?.initializeCharacter(on: tag)
 			
-		case .SetCHA(tag: let tag, file: let file, duration: let duration, characterName: let name):
-			try self.graphicDelegate?.setCharacter(on: tag, with: file, within: duration, as: name)
+		case .SetCHA(tag: let tag, file: let file, characterName: let name, duration: let duration, waitUntilEnd: let wait):
+			try self.graphicDelegate?.setCharacter(on: tag, with: file, as: name, within: duration, waitUntilEnd: wait)
 			
 		case .ShowCHA(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
 			try self.graphicDelegate?.showCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
 			
 		case .HideCHA(tag: let tag, duration: let duration, waitUntilEnd: let shouldWait):
 			try self.graphicDelegate?.hideCharacter(on: tag, within: duration, waitUntilEnd: shouldWait)
+			
+		case .HideMessageWindow:
+			self.graphicDelegate?.hideMessageWindow()
 		}
 		
 	}
@@ -227,6 +240,9 @@ extension ParserModel {
 		case .Return:
 			try self.returnToLastStack()
 			
+		case .StandBy:
+			self.standbyParsing()
+			
 		case .End:
 			self.endGame()
 		}
@@ -262,6 +278,12 @@ extension ParserModel {
 		
 	}
 	
+	private func standbyParsing() {
+		
+		self.isStandBying = true
+		
+	}
+	
 	private func endGame() {
 		
 		self.isGameEnded = true
@@ -276,8 +298,11 @@ extension ParserModel {
 	private func parseUserInteractionCommand(command: Script.Command.UserInteractionCommand) {
 		
 		switch command {
-		case .Message(speaker: _, voice: _, message: _):
-			break
+		case .Message(speaker: _, voice: _, message: let message):
+			self.userInteractionDelegate?.setMessage(message)
+			
+		case .ClearMessage:
+			self.userInteractionDelegate?.clearMessage()
 			
 		case .Selection:
 			break

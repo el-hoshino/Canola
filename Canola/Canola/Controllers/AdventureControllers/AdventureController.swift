@@ -28,6 +28,7 @@ class AdventureController: UIViewController {
 		
         // Do any additional setup after loading the view.
 		self.engine.mainParser?.graphicDelegate = self.adventureView
+		self.engine.mainParser?.userInteractionDelegate = self.adventureView
 		
 		self.view.addSubview(self.adventureView)
 		self.startGame()

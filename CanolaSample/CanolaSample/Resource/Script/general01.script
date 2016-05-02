@@ -17,12 +17,13 @@
 
 @Canola:	Canolaエンジンへようこそ
 
-.SetCHA		tag:1,		file: CHA002,	time: 5
+.SetCHA		tag:1,		file: CHA002,	time: 5,	wait: true
 
 @Canola:	voice: VOC002, これはCanolaエンジンを使ったADVゲームのサンプルです
 .Message	話者なしのメッセージはこんな感じです
 もしくは特殊記号じゃない文字で始まる行は全てメッセージとみなされます
 
+.HideMessageWindow
 .HideScreen	time: 1
 
 .Return

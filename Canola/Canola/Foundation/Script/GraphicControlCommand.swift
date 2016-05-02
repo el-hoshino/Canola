@@ -15,14 +15,16 @@ extension Script.Command {
 		case HideScreen(duration: NSTimeInterval, color: UIColor, waitUntilEnd: Bool)
 		
 		case InitBG(tag: Int)
-		case SetBG(tag: Int, file: String, duration: NSTimeInterval)
+		case SetBG(tag: Int, file: String, duration: NSTimeInterval, waitUntilEnd: Bool)
 		case ShowBG(tag: Int, duration: NSTimeInterval, waitUntilEnd: Bool)
 		case HideBG(tag: Int, duration: NSTimeInterval, waitUntilEnd: Bool)
 		
 		case InitCHA(tag: Int)
-		case SetCHA(tag: Int, file: String, duration: NSTimeInterval, characterName: String?)
+		case SetCHA(tag: Int, file: String, characterName: String?, duration: NSTimeInterval, waitUntilEnd: Bool)
 		case ShowCHA(tag: Int, duration: NSTimeInterval, waitUntilEnd: Bool)
 		case HideCHA(tag: Int, duration: NSTimeInterval, waitUntilEnd: Bool)
+		
+		case HideMessageWindow
 	}
 	
 }
@@ -41,8 +43,8 @@ extension Script.Command.GraphicControlCommand: CustomStringConvertible {
 		case .InitBG(tag: let tag):
 			return ".InitBG\ttag: \(tag)"
 			
-		case .SetBG(tag: let tag, file: let file, duration: let time):
-			return ".SetBG\ttag: \(tag), file: \(file), duration: \(time)"
+		case .SetBG(tag: let tag, file: let file, duration: let time, waitUntilEnd: let wait):
+			return ".SetBG\ttag: \(tag), file: \(file), duration: \(time), waitUntilEnd: \(wait)"
 			
 		case .ShowBG(tag: let tag, duration: let time, waitUntilEnd: let wait):
 			return ".ShowBG\ttag: \(tag), duration: \(time), waitUntilEnd: \(wait)"
@@ -53,14 +55,17 @@ extension Script.Command.GraphicControlCommand: CustomStringConvertible {
 		case .InitCHA(tag: let tag):
 			return ".ResetCHA\ttag: \(tag)"
 			
-		case .SetCHA(tag: let tag, file: let file, duration: let time, characterName: let name):
-			return ".SetCHA\ttag: \(tag), file: \(file), duration: \(time), name: \(name)"
+		case .SetCHA(tag: let tag, file: let file, characterName: let name, duration: let time, waitUntilEnd: let wait):
+			return ".SetCHA\ttag: \(tag), file: \(file), name: \(name), duration: \(time), waitUntilEnd: \(wait)"
 			
 		case .ShowCHA(tag: let tag, duration: let time, waitUntilEnd: let wait):
 			return ".ShowCHA\ttag: \(tag), duration: \(time), waitUntilEnd: \(wait)"
 			
 		case .HideCHA(tag: let tag, duration: let time, waitUntilEnd: let wait):
 			return ".HideCHA\ttag: \(tag), duration: \(time), waitUntilEnd: \(wait)"
+			
+		case .HideMessageWindow:
+			return ".HideMessageWindow"
 		}
 		
 	}

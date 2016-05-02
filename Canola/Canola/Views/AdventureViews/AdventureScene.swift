@@ -26,7 +26,7 @@ class AdventureScene: SKScene {
 		node.size = self.size
 		node.color = .blackColor()
 		node.alpha = 0
-		node.zPosition = 100
+		node.zPosition = 99
 		return node
 	}()
 	
@@ -50,6 +50,14 @@ class AdventureScene: SKScene {
 		return characters
 	}()
 	
+	lazy var messageWindow: MessageWindowNode = {
+		let node = MessageWindowNode(color: UIColor(red: 0, green: 0, blue: 1, alpha: 0.5), size: CGSize(width: self.size.width, height: 300))
+		node.alpha = 0
+		node.position.y = -(self.size.height - 300) / 2
+		node.zPosition = 100
+		return node
+	}()
+	
 	override func didMoveToView(view: SKView) {
 		
 		self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -63,8 +71,14 @@ class AdventureScene: SKScene {
 			self.addChild(node)
 		}
 		
+		self.addChild(self.messageWindow)
+		
 	}
 	
+}
+
+extension AdventureScene {
+
 	private func initializeNode(node: SKSpriteNode) {
 		
 		node.alpha = 0
@@ -74,7 +88,7 @@ class AdventureScene: SKScene {
 		
 	}
 	
-	private func switchNode(node: SKSpriteNode, to texture: SKTexture, within duration: NSTimeInterval) {
+	private func switchNode(node: SKSpriteNode, to texture: SKTexture, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
 		
 		//TODO: Use shader to make a disslove effect
 		if duration > 0 {
@@ -86,13 +100,32 @@ class AdventureScene: SKScene {
 
 			let fadeoutAction = SKAction.fadeAlphaTo(0, duration: duration)
 			let fadeinAction = SKAction.fadeAlphaTo(1, duration: duration)
-			let action = SKAction.runBlock({
-				node.runAction(fadeinAction)
-				tempNode.runAction(fadeoutAction, completion: { 
-					tempNode.removeFromParent()
+			
+			if shouldWait {
+				let semaphore = GCD.createSemaphore(0)
+				let action = SKAction.runBlock({
+					node.runAction(fadeinAction)
+					tempNode.runAction(fadeoutAction, completion: {
+						tempNode.removeFromParent()
+						GCD.fireSemaphore(semaphore)
+					})
 				})
-			})
-			self.runAction(action)
+				GCD.runAsynchronizedQueue(with: { 
+					self.runAction(action)
+				})
+				GCD.waitForSemaphore(semaphore)
+				
+			} else {
+				let action = SKAction.runBlock({
+					node.runAction(fadeinAction)
+					tempNode.runAction(fadeoutAction, completion: {
+						tempNode.removeFromParent()
+					})
+				})
+				GCD.runAsynchronizedQueue(with: { 
+					self.runAction(action)
+				})
+			}
 
 		} else {
 			node.texture = texture
@@ -122,6 +155,10 @@ class AdventureScene: SKScene {
 		
 	}
 	
+}
+
+extension AdventureScene {
+
 	func showScreen(within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) {
 		
 		let action = SKAction.fadeAlphaTo(0, duration: duration)
@@ -176,7 +213,7 @@ class AdventureScene: SKScene {
 		
 	}
 	
-	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval) throws {
+	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
 		
 		guard tag …= self.backgrounds.indexRange else {
 			throw Error.TagIDInvalid(tag: tag, nodeType: .Background)
@@ -188,7 +225,7 @@ class AdventureScene: SKScene {
 		
 		let background = self.backgrounds[tag]
 		let texture = SKTexture(image: image)
-		self.switchNode(background, to: texture, within: duration)
+		self.switchNode(background, to: texture, within: duration, waitUntilEnd: shouldWait)
 		
 	}
 	
@@ -214,7 +251,7 @@ class AdventureScene: SKScene {
 		
 	}
 	
-	func setCharacter(on tag: Int, with file: String, within duration: NSTimeInterval, `as` name: String?) throws {
+	func setCharacter(on tag: Int, with file: String, `as` name: String?, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
 		
 		guard tag …= self.characters.indexRange else {
 			throw Error.TagIDInvalid(tag: tag, nodeType: .Character)
@@ -226,7 +263,7 @@ class AdventureScene: SKScene {
 		
 		let character = self.characters[tag]
 		let texture = SKTexture(image: image)
-		self.switchNode(character, to: texture, within: duration)
+		self.switchNode(character, to: texture, within: duration, waitUntilEnd: shouldWait)
 		
 	}
 	
@@ -239,6 +276,18 @@ class AdventureScene: SKScene {
 		let character = self.characters[tag]
 		self.fadeNode(character, to: alpha, within: duration, waitUntilEnd: shouldWait)
 		
+	}
+	
+	func hideMessageWindow() {
+		self.messageWindow.hide()
+	}
+	
+	func setMessage(message: String) {
+		self.messageWindow.setMessage(message)
+	}
+	
+	func clearMessage() {
+		self.messageWindow.setMessage(nil)
 	}
 	
 }

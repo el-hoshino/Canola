@@ -39,8 +39,8 @@ extension AdventureView: ParserModelGraphicDelegate {
 		try self.gameScene.initializeBackground(on: tag)
 	}
 	
-	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval) throws {
-		try self.gameScene.setBackground(on: tag, with: file, within: duration)
+	func setBackground(on tag: Int, with file: String, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
+		try self.gameScene.setBackground(on: tag, with: file, within: duration, waitUntilEnd: shouldWait)
 	}
 	
 	func showBackground(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
@@ -55,8 +55,8 @@ extension AdventureView: ParserModelGraphicDelegate {
 		try self.gameScene.initializeCharacter(on: tag)
 	}
 	
-	func setCharacter(on tag: Int, with file: String, within duration: NSTimeInterval, `as` name: String?) throws {
-		try self.gameScene.setCharacter(on: tag, with: file, within: duration, as: name)
+	func setCharacter(on tag: Int, with file: String, `as` name: String?, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
+		try self.gameScene.setCharacter(on: tag, with: file, as: name, within: duration, waitUntilEnd: shouldWait)
 	}
 	
 	func showCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
@@ -65,6 +65,22 @@ extension AdventureView: ParserModelGraphicDelegate {
 	
 	func hideCharacter(on tag: Int, within duration: NSTimeInterval, waitUntilEnd shouldWait: Bool) throws {
 		try self.gameScene.fadeCharacter(on: tag, to: 0, within: duration, waitUntilEnd: shouldWait)
+	}
+	
+	func hideMessageWindow() {
+		self.gameScene.hideMessageWindow()
+	}
+	
+}
+
+extension AdventureView: ParserModelUserInteractionDelegate {
+	
+	func setMessage(message: String) {
+		self.gameScene.setMessage(message)
+	}
+	
+	func clearMessage() {
+		self.gameScene.clearMessage()
 	}
 	
 }

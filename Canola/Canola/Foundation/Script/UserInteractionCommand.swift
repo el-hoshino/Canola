@@ -12,6 +12,7 @@ extension Script.Command {
 	
 	enum UserInteractionCommand {
 		case Message(speaker: String?, voice: String?, message: String)
+		case ClearMessage
 		case Selection
 	}
 	
@@ -25,8 +26,11 @@ extension Script.Command.UserInteractionCommand: CustomStringConvertible {
 		case .Message(speaker: let speaker, voice: let voice, message: let message):
 			return ".Message\tspeaker: \(speaker), voice: \(voice), \(message)"
 			
+		case .ClearMessage:
+			return ".ClearMessage"
+			
 		case .Selection:
-			return "Selection"
+			return ".Selection"
 		}
 		
 	}

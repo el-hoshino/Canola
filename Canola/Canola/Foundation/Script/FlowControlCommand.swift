@@ -14,6 +14,7 @@ extension Script.Command {
 		case Jump(script: String?, label: String)
 		case Call(script: String?, label: String)
 		case Return
+		case StandBy
 		case End
 	}
 	
@@ -31,10 +32,13 @@ extension Script.Command.FlowControlCommand: CustomStringConvertible {
 			return ".Call\t\(label)"
 			
 		case .Return:
-			return "Return"
+			return ".Return"
+			
+		case .StandBy:
+			return ".StandBy"
 			
 		case .End:
-			return "End"
+			return ".End"
 		}
 		
 	}

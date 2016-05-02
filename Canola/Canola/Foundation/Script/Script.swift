@@ -69,9 +69,10 @@ extension Script {
 		
 		let file = try String(contentsOfURL: fileURL)
 		
-		let lines = try file.componentsSeparatedByString("\n").flatMap { (line) throws -> Command? in
-			return try Command(commandString: line)
-		}
+		let lines = try file.componentsSeparatedByString("\n").reduce([Command](), combine: { (array, nextCommand) throws -> [Command] in
+			let upcomingArray = try Command.createCommandArray(from: nextCommand)
+			return array + upcomingArray
+		})
 		
 		let labels = lines.enumerate().reduce([String: Int]()) { (current, nextLine) -> [String: Int] in
 			switch nextLine.element {
